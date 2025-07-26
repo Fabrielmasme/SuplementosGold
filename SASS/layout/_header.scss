@@ -1,0 +1,73 @@
+@import "../abstracts/variables";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $fondo-header;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+  a {
+    text-decoration: none;
+  }
+
+  .logo {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10rem;
+    list-style: none;
+    margin: 0 10rem 0 0;
+
+    li a {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $dorado-claro;
+      }
+    }
+  }
+
+  // MEDIA QUERIES
+  @media (max-width: 1024px) {
+    nav ul {
+      gap: 3rem;
+      margin: 0 3rem 0 0;
+    }
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav ul {
+      margin: center;
+      padding: 0;
+      width: 100%;
+
+      li a {
+        display: block;
+        padding: 0.5rem 0;
+        width: 100%;
+      }
+    }
+  }
+}

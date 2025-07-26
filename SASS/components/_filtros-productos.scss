@@ -1,0 +1,43 @@
+@import "../abstracts/variables";
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem auto 3rem;
+  padding: 1rem;
+  background-color: $fondo-header;
+  border-radius: 1rem;
+  max-width: 70%;
+
+  label {
+    color: $dorado-claro;
+    font-weight: 6000;
+    font-size: 1rem;
+  }
+
+  select {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background-color: $fondo-header;
+    color: $dorado-claro;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background-color: $primario; 
+    }
+
+    option {
+        margin: 3rem ;
+        background-color: $primario;
+        color: $dorado-claro;
+        margin: 32rem 0;
+    }
+  }
+}

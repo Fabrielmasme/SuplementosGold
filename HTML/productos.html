@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>Lista de productos</title>
+</head>
+<body>
+  <header>
+      <a href="../index.html">
+          <img src="../IMG/Logo.webp" alt="Logo de Suplementos Gold" class="logo">
+      </a>
+      <nav>
+          <ul>
+              <li><a href="../HTML/productos.html">Productos</a></li>
+              <li><a href="../HTML/nosotros.html">Nosotros</a></li>
+          </ul>
+      </nav>
+  </header>
+<body>
+  <h1>Catálogo de Productos</h1>
+
+  <section class="filtros">
+    <label for="ordenPrecio">Ordenar:</label>
+      <select id="ordenPrecio" name="ordenPrecio">
+        <option value="">Ordenar por precio</option>
+        <option value="menor">Menor a mayor</option>
+        <option value="mayor">Mayor a menor</option>
+    </select>
+
+    <label for="filtrarTipo">Filtrar:</label>
+      <select id="filtrarTipo" name="filtrarTipo">
+        <option value="">Filtrar por producto</option>
+        <option value="Bcaa">Bcaa</option>
+          <option value="Beta Alanina">Beta Alanina</option>
+          <option value="Cafeina">Cafeina</option>
+          <option value="Colageno">Colageno</option>
+          <option value="Creatina">Creatina</option>
+          <option value="Magnesio">Magnesio</option>
+          <option value="Multivitaminico">Multivitamínico</option>
+          <option value="Pancakes">Pancakes</option>
+          <option value="Proteina">Proteína</option>
+          <option value="Pre Entreno">Pre Entreno</option>
+    </select>
+  </section>
+
+
+  <!-- Acá se mostrarán los productos -->
+  <div id="contenedor-productos" class="productos-grid"></div>
+
+  <script src="../JS/productos.js"></script>
+  <script src="../JS/app.js"></script>    
+
+</body>
+<footer>
+      <p>© 2025 Suplementos Gold. Todos los derechos reservados.</p>
+      <ul>
+          <li>
+              <a href="#">
+                <img class="iconos-footer" src="../SVG/whatsapp.svg" alt="Logo de Whatsapp">
+              </a>
+          </li>
+          <li>
+                <a href="https://www.instagram.com/suplementosgold_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+                    <img class="iconos-footer" src="../SVG/instagram.svg" alt="Logo de instagram">
+                </a>
+            </li>
+            <li>
+                <a href="../index.html"> 
+                    <img class="iconos-footer" src="../IMG/Logo.webp" alt="Logo de suplementos gold">
+                </a>
+          </li>
+      </ul>
+  </footer>
+</body>
+</html>
+
