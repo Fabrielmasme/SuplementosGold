@@ -418,34 +418,26 @@ main .productos button:hover {
   }
 }
 @media (max-width: 600px) {
-  main .carrusel {
-    height: 40vh;
-  }
-  main .texto-presentacion h1 {
-    font-size: 1.8rem;
-  }
-  main .texto-presentacion p {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
-  main .carrusel img {
-    height: 40vh;
-  }
   main .productos .productos-items {
-    width: 100%;
+    width: 90%;
     margin: 1rem auto;
+    padding: 1rem;
+    height: auto;
+  }
+  main .productos .productos-items img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  main .productos .productos-items h3, main .productos .productos-items h4 {
+    text-align: center;
+    margin-top: 0.5rem;
   }
   main .productos button {
     padding: 0.5rem 1.5rem;
     font-size: 0.9rem;
     margin: 2rem auto;
-  }
-  main .carrusel-btn {
-    font-size: 1.5rem;
-    padding: 0.3rem 0.8rem;
-  }
-  main .caracteristicas article {
-    width: 80%;
+    display: block;
   }
 }
 

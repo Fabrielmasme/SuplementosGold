@@ -186,39 +186,32 @@ main {
     }
   }
 
-  @media (max-width: 600px) {
-    .carrusel {
-      height: 40vh;
-    }
-    .texto-presentacion h1 {
-      font-size: 1.8rem;
-    }
+@media (max-width: 600px) {
+  .productos {
+    .productos-items {
+      width: 90%;
+      margin: 1rem auto;
+      padding: 1rem;
+      height: auto; // ✅ Evitar limitar con vh
 
-    .texto-presentacion p {
-      font-size: 1rem;
-      padding: 0 1rem;
-    }
-    .carrusel img{
-      height: 40vh;
-    }
-    .productos {
-      .productos-items {
+      img {
         width: 100%;
-        margin: 1rem auto;
+        height: auto; // ✅ Mantiene la proporción
+        border-radius: 0.5rem;
+      }
+
+      h3, h4 {
+        text-align: center;
+        margin-top: 0.5rem;
       }
     }
-    .productos button{
+
+    button {
       padding: 0.5rem 1.5rem;
       font-size: 0.9rem;
       margin: 2rem auto;
+      display: block;
     }
-    .carrusel-btn {
-      font-size: 1.5rem;
-      padding: 0.3rem 0.8rem;
-    }
-    .caracteristicas article{
-      width: 80%;
-    }
-
   }
+}
 }
