@@ -1,44 +1,111 @@
 @import "../abstracts/variables";
-
-.productos-grid {
+#contenedor-productos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  background-color: $gris-fondo;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin: 3rem 5rem;
 }
 
-.producto {
+.producto-card {
+  font-family: $tipografia;
   background-color: $gris-fondo;
   border: 1px solid $gris-borde;
-  margin: 0.5rem 0.5rem;
-  border-radius: 12px;
-  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba($primario, 0.1);
+  max-width: 20rem;
+  padding: 15px 20px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+  transition: box-shadow 0.3s ease;
 
   &:hover {
-    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba($primario, 0.2);
   }
 
   img {
-    max-width: 100%;
-    height: 12rem;
-    object-fit: contain;
-    margin-bottom: 1rem;
-    border-radius: 10px;
+    width: 15rem;
+    height: 18rem;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   h3 {
-    font-size: 1.1rem;
     color: $primario;
-    margin-bottom: 0.5rem;
+    font-family: 'Bebas Neue', cursive, $tipografia;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
   }
 
-  .precio {
-    font-weight: bold;
-    color: $dorado-claro;
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: darken($primario, 15%);
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: $fondo-header;
+    background-color: $dorado-claro;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 3px 7px rgba($primario, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: darken($dorado-claro, 10%);
+      color: #fff;
+    }
   }
 }
 
+// Separación de media queries para mejorar organización
+
+@media (max-width: 1024px) {
+  #contenedor-productos {
+    margin: 2rem 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+
+  .producto-card {
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  #contenedor-productos {
+    margin: 1.5rem 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .producto-card {
+    img {
+      width: 10rem;
+      height: auto;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    a {
+      padding: 6px 14px;
+      font-size: 0.9rem;
+    }
+  }
+}

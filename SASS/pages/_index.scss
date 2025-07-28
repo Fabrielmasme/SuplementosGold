@@ -1,0 +1,208 @@
+@import "../abstracts/variables";
+main {
+  padding: 2rem;
+  font-family: $tipografia;
+  color: $primario;
+  background-color: $gris-fondo;
+
+  .carrusel {
+    margin-bottom: 3rem;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    img {
+        flex: 0 0 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+        scroll-snap-align: center;
+        border-radius: 0.5rem;
+    }
+    .carrusel-contenedor {
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .carrusel-lista {
+      display: flex;
+      transition: transform 0.4s ease;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .carrusel-item {
+        min-width: 100%;
+        img {
+          width: 100%;
+          display: block;
+          border-radius: 1rem;
+        }
+      }
+    }
+
+    .carrusel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      z-index: 10;
+
+      &.anterior {
+        left: 0.5rem;
+      }
+
+      &.despues {
+        right: 0.5rem;
+      }
+    }
+  }
+
+  .texto-presentacion {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2.2rem;
+      color: $dorado-claro;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 1rem auto;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: $primario;
+    }
+  }
+
+  .caracteristicas {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 3rem 0;
+    gap: 1.5rem;
+
+    article {
+      flex: 1;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      svg {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.8rem;
+        color: $dorado-claro;
+      }
+      p {
+        font-weight: bold;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .productos {
+    margin-top: 3rem;
+    text-align: center;
+
+    .productos-items {
+      display: inline-block;
+      margin: 1rem;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 0.75rem;
+      width: 220px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      img {
+        width: 100%;
+        border-radius: 0.5rem;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      h3 {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+      }
+
+      h4 {
+        color: $dorado-claro;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      margin-top: 2rem;
+      background-color: $dorado-claro;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      &:hover {
+        background-color: darken($dorado-claro, 10%);
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .caracteristicas {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .productos-items {
+      width: 90%;
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .texto-presentacion h1 {
+      font-size: 1.8rem;
+    }
+
+    .texto-presentacion p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .productos {
+      .productos-items {
+        width: 100%;
+        margin: 1rem auto;
+      }
+    }
+
+    .carrusel-btn {
+      font-size: 1.5rem;
+      padding: 0.3rem 0.8rem;
+    }
+  }
+}
