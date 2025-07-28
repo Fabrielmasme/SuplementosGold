@@ -264,7 +264,7 @@ main .carrusel {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  height: 70vh;
+  height: 60vh;
 }
 main .carrusel img {
   flex: 0 0 100%;
@@ -418,6 +418,9 @@ main .productos button:hover {
   }
 }
 @media (max-width: 600px) {
+  main .carrusel {
+    height: 40vh;
+  }
   main .texto-presentacion h1 {
     font-size: 1.8rem;
   }
@@ -426,15 +429,23 @@ main .productos button:hover {
     padding: 0 1rem;
   }
   main .carrusel img {
-    height: 60vh;
+    height: 40vh;
   }
   main .productos .productos-items {
     width: 100%;
     margin: 1rem auto;
   }
+  main .productos button {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    margin: 2rem auto;
+  }
   main .carrusel-btn {
     font-size: 1.5rem;
     padding: 0.3rem 0.8rem;
+  }
+  main .caracteristicas article {
+    width: 80%;
   }
 }
 
