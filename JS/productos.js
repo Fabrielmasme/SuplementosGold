@@ -3,7 +3,8 @@ const productos = [
     id: 1,
     nombre: "Creatina 150g Star Nutrition",
     precio: 18800,
-    imagen: "../IMG/CREATINA/Creatina150g.webp"
+    imagen: "../IMG/CREATINA/Creatina150g.webp",
+    whatsapp: "https://wa.me/5491130869764?text=Hola,%20quiero%20consultar%20por%20Proteína%20Whey"
   },
   {
     id: 2,

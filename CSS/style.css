@@ -25,7 +25,7 @@ a {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(44, 62, 80, 0.1);
-  max-width: 20rem;
+  width: 20rem;
   padding: 15px 20px;
   text-align: center;
   transition: box-shadow 0.3s ease;
@@ -264,7 +264,6 @@ main .carrusel {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  height: 60vh;
 }
 main .carrusel img {
   flex: 0 0 100%;
@@ -293,6 +292,7 @@ main .carrusel .carrusel-lista {
 }
 main .carrusel .carrusel-lista .carrusel-item {
   min-width: 100%;
+  height: 30rem;
 }
 main .carrusel .carrusel-lista .carrusel-item img {
   width: 100%;
@@ -319,7 +319,6 @@ main .carrusel .carrusel-btn.despues {
 }
 main .texto-presentacion {
   text-align: center;
-  margin-bottom: 3rem;
 }
 main .texto-presentacion h1 {
   font-size: 2.2rem;
@@ -340,7 +339,7 @@ main .texto-presentacion h2 {
 main .caracteristicas {
   display: flex;
   justify-content: space-between;
-  text-align: center;
+  text-align: justify;
   margin: 3rem 0;
   gap: 1.5rem;
 }
@@ -418,26 +417,73 @@ main .productos button:hover {
   }
 }
 @media (max-width: 600px) {
+  main .carrusel {
+    height: auto;
+  }
+  main .carrusel .carrusel-contenedor {
+    border-radius: 0;
+  }
+  main .carrusel .carrusel-item {
+    min-width: 100%;
+  }
+  main .carrusel .carrusel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.5rem;
+  }
+  main .carrusel .carrusel-btn {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+    top: 45%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  main .carrusel .carrusel-btn.anterior {
+    left: 0.2rem;
+  }
+  main .carrusel .carrusel-btn.despues {
+    right: 0.2rem;
+  }
+  main .carrusel .carrusel-lista {
+    height: 15rem;
+  }
+  main .texto-presentacion h1 {
+    font-size: 1.8rem;
+  }
+  main .texto-presentacion p {
+    font-size: 0.9rem;
+  }
+  main .texto-presentacion h2 {
+    font-size: 1.3rem;
+    margin: 4rem 0;
+  }
+  main .caracteristicas {
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem 0;
+  }
+  main .caracteristicas article {
+    width: 80%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  main .caracteristicas p {
+    text-align: center;
+    font-size: 3rem;
+  }
   main .productos .productos-items {
     width: 90%;
     margin: 1rem auto;
-    padding: 1rem;
     height: auto;
   }
   main .productos .productos-items img {
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-  }
-  main .productos .productos-items h3, main .productos .productos-items h4 {
-    text-align: center;
-    margin-top: 0.5rem;
+    width: 15rem;
+    height: 18rem;
   }
   main .productos button {
-    padding: 0.5rem 1.5rem;
+    padding: 0.6rem 1.5rem;
     font-size: 0.9rem;
-    margin: 2rem auto;
-    display: block;
+    margin: 3rem auto;
   }
 }
 

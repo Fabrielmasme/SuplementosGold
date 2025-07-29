@@ -3,14 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+    <link rel="stylesheet" href="../CSS/style.css">
     <title>Producto</title>
 </head>
 <body>
-    <main id="detalle-producto">
-  <!-- Acá se cargará la información -->
+    <header>
+      <a href="../index.html">
+          <img src="../IMG/Logo.webp" alt="Logo de Suplementos Gold" class="logo">
+      </a>
+      <nav>
+          <ul>
+              <li><a href="../HTML/productos.html">Productos</a></li>
+              <li><a href="../HTML/nosotros.html">Nosotros</a></li>
+          </ul>
+      </nav>
+    </header>
+    <main>
+      <button class="boton-volver" onclick="history.back()">⟵ Volver</button>
+      <section id="detalle-producto">
+        <!-- Acá se cargará la información -->
+
+      </section>
     </main>
-
-
+    <footer>
+        <p>© 2025 Suplementos Gold. Todos los derechos reservados.</p>
+        <ul>
+            <li>
+                <a href="#">
+                <img class="iconos-footer" src="../SVG/whatsapp.svg" alt="Logo de Whatsapp">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/suplementosgold_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+                    <img class="iconos-footer" src="../SVG/instagram.svg" alt="Logo de instagram">
+                </a>
+            </li>
+            <li>
+                <a href="../index.html"> 
+                    <img class="iconos-footer" src="../IMG/Logo.webp" alt="Logo de suplementos gold">
+                </a>
+            </li>
+        </ul>
+    </footer>
     <script src="../JS/productos.js"></script>
     <script src="../JS/detalle.js"></script>
 </body>
