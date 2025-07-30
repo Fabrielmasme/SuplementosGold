@@ -471,9 +471,12 @@ main .productos button:hover {
     text-align: center;
     font-size: 3rem;
   }
+  main .productos {
+    margin: 4rem 0;
+  }
   main .productos .productos-items {
     width: 90%;
-    margin: 1rem auto;
+    margin: 2rem auto;
     height: auto;
   }
   main .productos .productos-items img {
@@ -483,7 +486,7 @@ main .productos button:hover {
   main .productos button {
     padding: 0.6rem 1.5rem;
     font-size: 0.9rem;
-    margin: 3rem auto;
+    margin: 4rem 2rem;
   }
 }
 

@@ -247,9 +247,10 @@ main {
       }
     }
     .productos {
+      margin: 4rem 0;
       .productos-items {
         width: 90%;
-        margin: 1rem auto;
+        margin: 2rem auto;
         height: auto;
       }
       .productos-items img {
@@ -259,7 +260,7 @@ main {
       button {
         padding: 0.6rem 1.5rem;
         font-size: 0.9rem;
-        margin: 3rem auto;
+        margin: 4rem 2rem;
       }
     }
   }
