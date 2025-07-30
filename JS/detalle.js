@@ -19,7 +19,7 @@ contenedor.innerHTML = `
       <p class="precio">$${producto.precio}</p>
       <p class="descripcion">${producto.descripcion || "Sin descripción disponible."}</p>
       <a href="${producto.whatsapp}" target="_blank" class="boton-wpp">
-        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+         Consultar por WhatsApp
       </a>
     </div>
   </div>

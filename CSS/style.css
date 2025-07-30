@@ -61,7 +61,7 @@ a {
   display: inline-block;
   text-decoration: none;
   color: #252522;
-  background-color: #f7e581;
+  background-color: rgba(255, 225, 56, 0.937254902);
   padding: 8px 18px;
   border-radius: 25px;
   font-weight: 600;
@@ -69,7 +69,7 @@ a {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .producto-card a:hover {
-  background-color: rgb(243.9552238806, 219.1044776119, 81.0447761194);
+  background-color: rgba(255, 217.3115577889, 5, 0.937254902);
   color: #fff;
 }
 
@@ -115,7 +115,7 @@ a {
   max-width: 70%;
 }
 .filtros label {
-  color: #f7e581;
+  color: rgba(255, 225, 56, 0.937254902);
   font-weight: 6000;
   font-size: 1rem;
 }
@@ -124,7 +124,7 @@ a {
   border-radius: 8px;
   border: none;
   background-color: #252522;
-  color: #f7e581;
+  color: rgba(255, 225, 56, 0.937254902);
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
@@ -136,7 +136,7 @@ a {
 .filtros select option {
   margin: 3rem;
   background-color: #2c3e50;
-  color: #f7e581;
+  color: rgba(255, 225, 56, 0.937254902);
   margin: 32rem 0;
 }
 
@@ -170,7 +170,7 @@ header nav ul li a {
   transition: color 0.3s ease;
 }
 header nav ul li a:hover {
-  color: #f7e581;
+  color: rgba(255, 225, 56, 0.937254902);
 }
 @media (max-width: 1024px) {
   header nav ul {
@@ -241,7 +241,7 @@ footer ul li a {
   text-decoration: none;
 }
 footer ul li a:hover {
-  color: #f7e581;
+  color: rgba(255, 225, 56, 0.937254902);
 }
 footer ul li a .iconos-footer {
   width: 28px;
@@ -322,7 +322,7 @@ main .texto-presentacion {
 }
 main .texto-presentacion h1 {
   font-size: 2.2rem;
-  color: #f7e581;
+  color: rgba(255, 225, 56, 0.937254902);
 }
 main .texto-presentacion p {
   max-width: 800px;
@@ -354,7 +354,7 @@ main .caracteristicas article svg {
   width: 40px;
   height: 40px;
   margin-bottom: 0.8rem;
-  color: #f7e581;
+  color: rgba(255, 225, 56, 0.937254902);
 }
 main .caracteristicas article p {
   font-weight: bold;
@@ -384,13 +384,13 @@ main .productos .productos-items h3 {
   font-size: 1rem;
 }
 main .productos .productos-items h4 {
-  color: #f7e581;
+  color: rgba(255, 225, 56, 0.937254902);
   font-weight: bold;
   font-size: 1rem;
 }
 main .productos button {
   margin-top: 2rem;
-  background-color: #f7e581;
+  background-color: rgba(255, 225, 56, 0.937254902);
   border: none;
   padding: 0.8rem 2rem;
   border-radius: 0.5rem;
@@ -404,7 +404,7 @@ main .productos button a {
   font-size: 1rem;
 }
 main .productos button:hover {
-  background-color: rgb(243.9552238806, 219.1044776119, 81.0447761194);
+  background-color: rgba(255, 217.3115577889, 5, 0.937254902);
 }
 @media (max-width: 900px) {
   main .caracteristicas {
@@ -498,7 +498,7 @@ h1 {
   text-align: center;
   margin: 5rem 1rem;
   font-size: 2.5rem;
-  color: #f7e581;
+  color: rgba(255, 225, 56, 0.937254902);
   text-transform: uppercase;
   letter-spacing: 1px;
   border-bottom: 1px solid #ccc;
@@ -517,24 +517,24 @@ main {
   flex: 1;
 }
 main .info-nosotros {
-  padding: 2rem;
+  padding: 1cm;
   background-color: #f9f9f9;
   border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 60%;
+  width: 70%;
   margin: 1rem auto;
 }
 main img {
-  width: 27%;
-  height: 25%;
+  width: 40%;
+  height: 40%;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
   object-fit: cover;
 }
 main p {
   font-size: 1rem;
-  line-height: 1.3;
+  line-height: 1.5;
   text-align: justify;
   padding: 0 1rem;
   margin: 0 auto;
@@ -566,9 +566,162 @@ main p {
   main .info-nosotros p {
     font-size: 0.97rem;
     line-height: 1.5;
-    padding: 0 0.5rem;
-    max-width: 100%;
-    text-align: left;
+    padding: 0 1rem;
+  }
+}
+
+main {
+  font-family: montserrat, sans-serif, bebas-neue, sans-serif;
+}
+
+.boton-volver {
+  display: inline-block;
+  background-color: #25d366;
+  color: #333;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.boton-volver:hover {
+  background-color: #179246;
+}
+
+#detalle-producto {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  width: 60%;
+  height: auto;
+  margin: auto;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+.producto__imagen img {
+  width: 15rem;
+  height: auto;
+}
+
+.producto__imagen {
+  width: 25rem;
+  height: auto;
+}
+
+.producto__info {
+  text-align: justify;
+  height: auto;
+}
+
+.producto__info h1 {
+  font-size: 2rem;
+  margin: 4rem 0;
+}
+
+.precio {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 1rem;
+}
+
+.descripcion {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Botón de WhatsApp */
+.boton-wpp {
+  display: inline-flex;
+  align-items: center;
+  background-color: #25d366;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.boton-wpp:hover {
+  background-color: #179246;
+}
+
+.wpp-icono {
+  width: 20px;
+  height: 20px;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  #detalle-producto {
+    width: 80%;
+    padding: 1.5rem;
+  }
+  .producto__imagen {
+    width: 20rem;
+  }
+  .producto__imagen img {
+    width: 12rem;
+  }
+  .producto__info h1 {
+    font-size: 1.75rem;
+    margin: 3rem 0;
+  }
+  .precio {
+    font-size: 1.25rem;
+  }
+  .boton-volver, .boton-wpp {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+/* Celular: hasta 767px */
+@media only screen and (max-width: 767px) {
+  #detalle-producto {
+    width: 95%;
+    padding: 1rem;
+  }
+  .producto__imagen {
+    width: 100%;
+    max-width: 18rem;
+  }
+  .producto__imagen img {
+    width: 100%;
+    max-width: 15rem;
+  }
+  .producto__info h1 {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+  }
+  .precio {
+    font-size: 1.1rem;
+  }
+  .descripcion {
+    font-size: 0.9rem;
+  }
+  .boton-volver {
+    width: 60%;
+    padding: 1rem;
+  }
+  .boton-wpp {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    justify-content: center;
+  }
+  .producto {
+    padding: 1rem;
+    gap: 1rem;
   }
 }
 
