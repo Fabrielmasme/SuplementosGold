@@ -20,7 +20,6 @@ a {
 }
 
 .producto-card {
-  font-family: arial, sans-serif;
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -47,7 +46,7 @@ a {
 }
 .producto-card h3 {
   color: #2c3e50;
-  font-family: "Bebas Neue", cursive, arial, sans-serif;
+  font-family: arial, sans-serif;
   font-size: 1.6rem;
   margin-bottom: 8px;
   letter-spacing: 1px;
@@ -322,17 +321,17 @@ main .texto-presentacion {
 }
 main .texto-presentacion h1 {
   font-size: 2.2rem;
-  color: rgba(255, 225, 56, 0.937254902);
+  color: #252522;
 }
 main .texto-presentacion p {
-  max-width: 800px;
-  margin: 1rem auto;
-  line-height: 1.6;
-  font-size: 1.1rem;
   text-align: justify;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: #2c3e50;
+  font-weight: bold;
 }
 main .texto-presentacion h2 {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   font-size: 1.5rem;
   color: #2c3e50;
 }
@@ -353,8 +352,7 @@ main .caracteristicas article {
 main .caracteristicas article svg {
   width: 40px;
   height: 40px;
-  margin-bottom: 0.8rem;
-  color: rgba(255, 225, 56, 0.937254902);
+  color: #252522;
 }
 main .caracteristicas article p {
   font-weight: bold;
@@ -368,23 +366,27 @@ main .productos .productos-items {
   display: inline-block;
   margin: 1rem;
   padding: 1rem;
+  width: 20rem;
+  height: 25rem;
   background-color: #fff;
   border-radius: 0.75rem;
-  width: 220px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 main .productos .productos-items img {
-  width: 100%;
-  border-radius: 0.5rem;
-  height: 180px;
-  object-fit: cover;
+  width: 70%;
+  height: 70%;
+  border-radius: 8px;
+}
+main .productos .productos-items .info {
+  margin-top: 2rem;
+  text-align: center;
 }
 main .productos .productos-items h3 {
+  font-family: arial, sans-serif;
   margin: 0.5rem 0;
   font-size: 1rem;
 }
 main .productos .productos-items h4 {
-  color: rgba(255, 225, 56, 0.937254902);
   font-weight: bold;
   font-size: 1rem;
 }
@@ -498,7 +500,7 @@ h1 {
   text-align: center;
   margin: 5rem 1rem;
   font-size: 2.5rem;
-  color: rgba(255, 225, 56, 0.937254902);
+  color: #252522;
   text-transform: uppercase;
   letter-spacing: 1px;
   border-bottom: 1px solid #ccc;
@@ -517,17 +519,17 @@ main {
   flex: 1;
 }
 main .info-nosotros {
-  padding: 1cm;
+  padding: 5rem;
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 70%;
-  margin: 1rem auto;
+  width: 60%;
+  margin: 2rem auto;
 }
-main img {
-  width: 40%;
-  height: 40%;
+main .img-nosotros {
+  width: 15%;
+  height: 30%;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
   object-fit: cover;
@@ -538,7 +540,7 @@ main p {
   text-align: justify;
   padding: 0 1rem;
   margin: 0 auto;
-  max-width: 800px;
+  font-weight: bold;
 }
 @media (max-width: 800px) {
   main {
@@ -550,23 +552,22 @@ main p {
 }
 @media (max-width: 500px) {
   main {
-    padding: 1rem 0;
+    padding: 1rem;
   }
   main .info-nosotros {
-    padding: 0.9rem 0.4rem;
+    padding: 1rem;
+    width: 80%;
   }
   main .info-nosotros img {
     width: 70px;
     height: 70px;
     margin-bottom: 1rem;
   }
-  main .info-nosotros h2 {
-    font-size: 1.2rem;
-  }
   main .info-nosotros p {
-    font-size: 0.97rem;
-    line-height: 1.5;
-    padding: 0 1rem;
+    font-size: 1rem;
+    line-height: 1.3;
+    text-align: left;
+    padding: 1rem 1rem;
   }
 }
 
