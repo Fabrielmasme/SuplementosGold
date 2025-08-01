@@ -263,38 +263,42 @@ main .carrusel {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  height: auto;
 }
 main .carrusel img {
   flex: 0 0 100%;
-  height: auto;
-  object-fit: cover;
   scroll-snap-align: center;
   border-radius: 0.5rem;
+  height: 30rem;
 }
 main .carrusel .carrusel img {
-  margin: 0 !important;
-  padding: 0 !important;
   display: block;
 }
 main .carrusel .carrusel-contenedor {
   position: relative;
   overflow: hidden;
-  max-width: 100%;
   border-radius: 1rem;
 }
 main .carrusel .carrusel-lista {
   display: flex;
-  transition: transform 0.4s ease;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   list-style: none;
+  width: 90%;
   padding: 0;
-  margin: 0;
+  margin: 2rem auto;
 }
 main .carrusel .carrusel-lista .carrusel-item {
   min-width: 100%;
-  height: 30rem;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 main .carrusel .carrusel-lista .carrusel-item img {
-  width: 100%;
+  width: 80%;
+  height: 40rem;
   display: block;
   border-radius: 1rem;
 }
@@ -437,7 +441,7 @@ main .productos button:hover {
   main .carrusel .carrusel-btn {
     font-size: 1.5rem;
     padding: 0.4rem 0.8rem;
-    top: 45%;
+    top: 50%;
     background-color: rgba(0, 0, 0, 0.3);
   }
   main .carrusel .carrusel-btn.anterior {

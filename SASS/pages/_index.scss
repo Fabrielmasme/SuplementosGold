@@ -4,46 +4,50 @@ main {
   font-family: $tipografia;
   color: $primario;
   background-color: $gris-fondo;
-
   .carrusel {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    height: auto;
     img {
       flex: 0 0 100%;
-      height: auto;
-      object-fit: cover;
       scroll-snap-align: center;
       border-radius: 0.5rem;
+      height: 30rem;
     }
     .carrusel img {
-      margin: 0 !important;
-      padding: 0 !important;
       display: block;
     }
 
     .carrusel-contenedor {
       position: relative;
       overflow: hidden;
-      max-width: 100%;
       border-radius: 1rem;
     }
 
     .carrusel-lista {
       display: flex;
-      transition: transform 0.4s ease;
+      overflow:hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
       list-style: none;
+      width: 90%;
       padding: 0;
-      margin: 0;
+      margin: 2rem auto;
 
       .carrusel-item {
         min-width: 100%;
-        height: 30rem;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        display: flex;
         img {
-          width: 100%;
+          width: 80%;
+          height: 40rem;
           display: block;
           border-radius: 1rem;
+
         }
       }
     }
@@ -207,7 +211,7 @@ main {
       .carrusel-btn {
         font-size: 1.5rem;
         padding: 0.4rem 0.8rem;
-        top: 45%;
+        top: 50%;
         background-color: rgba(0, 0, 0, 0.3);
 
         &.anterior {
