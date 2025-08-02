@@ -1,16 +1,22 @@
 const contenedor = document.getElementById("contenedor-productos");
 
-productos.forEach(producto => {
-  const div = document.createElement("div");
-  div.classList.add("producto-card");
+function renderizarProductos(lista) {
+  contenedor.innerHTML = "";
 
-  div.innerHTML = `
-    <img src="${producto.imagen}" alt="${producto.nombre}">
-    <h3>${producto.nombre}</h3>
-    <p>Precio: $${producto.precio}</p>
-    <a href="../HTML/producto.html?id=${producto.id}">Ver detalle</a>
-  `;
+  lista.forEach(producto => {
+    const div = document.createElement("div");
+    div.classList.add("producto-card");
 
-  contenedor.appendChild(div);
-});
+    div.innerHTML = `
+      <img src="${producto.imagen}" alt="${producto.nombre}">
+      <h3>${producto.nombre}</h3>
+      <p>Precio: $${producto.precio}</p>
+      <a href="../HTML/producto.html?id=${producto.id}">Ver detalle</a>
+    `;
 
+    contenedor.appendChild(div);
+  });
+}
+
+// Mostrar todos los productos al inicio
+renderizarProductos(productos);
