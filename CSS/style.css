@@ -532,7 +532,7 @@ main .info-nosotros {
   margin: 2rem auto;
 }
 main .img-nosotros {
-  width: 15%;
+  width: 20%;
   height: 30%;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
@@ -645,6 +645,8 @@ main {
 .descripcion {
   color: #555;
   margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  text-align: justify;
 }
 
 /* Botón de WhatsApp */
@@ -713,6 +715,8 @@ main {
   }
   .descripcion {
     font-size: 0.9rem;
+    text-align: left;
+    padding: 1rem 2rem;
   }
   .boton-volver {
     width: 60%;

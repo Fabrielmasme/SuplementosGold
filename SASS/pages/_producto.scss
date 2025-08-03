@@ -65,6 +65,8 @@ main{
 .descripcion {
   color: #555;
   margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  text-align: justify;
 }
 
 /* Botón de WhatsApp */
@@ -145,6 +147,8 @@ main{
 
   .descripcion {
     font-size: 0.9rem;
+    text-align: left;
+    padding: 1rem 2rem;
   }
 
   .boton-volver{
