@@ -130,7 +130,7 @@ const productos = [
     nombre: "Beta Alanina 150g Star Nutrition",
     tipo: "Beta Alanina",
     precio: 18800,
-    imagen: "../IMG/BETAALANINA/BetaAlanina150g.webp"
+    imagen: "../IMG/BETAALANINA/BetaAlanina300g.webp"
   }
 ];
 
