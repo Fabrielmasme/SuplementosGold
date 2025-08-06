@@ -89,9 +89,9 @@ const productos = [
   },
   {
     id: 12,
-    nombre: "Pre Entreno Ímpv8 285g",
+    nombre: "Pre Entreno pump v8 285g",
     tipo: "Pre Entreno",
-    precio: 0,
+    precio: 29000,
     imagen: "../IMG/PRE-ENTRENO/PreEntrenoúmpv8-285g.webp",
     descripcion: "Suplemento pre entrenamiento con fórmula avanzada y estimulantes para aumentar energía y resistencia. Consumir una dosis 20-30 minutos antes del ejercicio, mezclado con agua."
   },
