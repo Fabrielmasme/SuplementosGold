@@ -8,6 +8,16 @@ const producto = productos.find(prod => prod.id === id);
 // 3. Mostrar el producto
 const contenedor = document.getElementById("detalle-producto");
 
+// Esta seccion es para redireccionar a WhatsApp
+
+const numeroWpp = "5492224529603"; // Reemplazalo por el tuyo
+
+productos.forEach(producto => {
+  const mensaje = `Hola! Estoy interesado en el producto ${encodeURIComponent(producto.nombre)}`;
+  producto.whatsapp = `https://wa.me/${numeroWpp}?text=${mensaje}`;
+});
+
+// Mostrar el producto en el la pagina
 if (producto) {
 contenedor.innerHTML = `
   <div class="producto">
