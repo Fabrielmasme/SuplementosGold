@@ -11,7 +11,7 @@ const productos = [
     id: 2,
     nombre: "Creatina 300g Pote Star Nutrition",
     tipo: "Creatina",
-    precio: 28999,
+    precio: 31999,
     imagen: "../IMG/CREATINA/Creatina300g.webp",
     descripcion: "Pensado para quienes entrenan regularmente y desean mejorar su rendimiento físico. La creatina ayuda a aumentar la fuerza y acelerar la recuperación muscular. Tomar 3-5 gramos diarios, preferentemente tras el ejercicio, mezclados con agua o jugo."
   },
@@ -19,7 +19,7 @@ const productos = [
     id: 3,
     nombre: "Creatina 300g Doypack Star Nutrition",
     tipo: "Creatina",
-    precio: 34500,
+    precio: 28999,
     imagen: "../IMG/CREATINA/CreatinaPack300g.webp",
     descripcion: "Creatina micronizada para una absorción rápida y eficaz, ideal para deportistas que realizan entrenamientos intensos. Favorece la fuerza y la resistencia muscular. Se recomienda consumir 3-5 gramos diarios después de entrenar, disuelta en agua o jugo."
   },
@@ -35,7 +35,7 @@ const productos = [
     id: 5,
     nombre: "Proteína Doypack Star Nutrition 908g Chocolate",
     tipo: "Proteina",
-    precio: 33500,
+    precio: 34500,
     imagen: "../IMG/PROTEINA/ProteinaStarNutrion908gChocolate.webp",
     descripcion: "Proteína en polvo con delicioso sabor chocolate, diseñada para favorecer el desarrollo y la recuperación muscular tras el entrenamiento. Aporta un alto contenido de aminoácidos esenciales. Se recomienda tomar una porción de 30 gramos disuelta en agua o leche, preferentemente después del ejercicio."
   },
@@ -43,7 +43,7 @@ const productos = [
     id: 6,
     nombre: "Proteína Doypack Star Nutrition 908g Vainilla",
     tipo: "Proteina",
-    precio: 33500,
+    precio: 34500,
     imagen: "../IMG/PROTEINA/ProteinaStarNutrion908gVainilla.webp",
     descripcion: "Proteína con perfil completo de aminoácidos esenciales y sabor suave a vainilla. Ideal para consumir después del entrenamiento para potenciar la recuperación muscular y el crecimiento. Tomar una porción de 30 gramos disuelta en agua o leche."
   },
