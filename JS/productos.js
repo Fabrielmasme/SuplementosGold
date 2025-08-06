@@ -9,17 +9,17 @@ const productos = [
   },
   {
     id: 2,
-    nombre: "Creatina 300g Doypack Star Nutrition",
+    nombre: "Creatina 300g Pote Star Nutrition",
     tipo: "Creatina",
     precio: 28999,
     imagen: "../IMG/CREATINA/Creatina300g.webp",
-    descripcion: "Formato económico pensado para quienes entrenan regularmente y desean mejorar su rendimiento físico. La creatina ayuda a aumentar la fuerza y acelerar la recuperación muscular. Tomar 3-5 gramos diarios, preferentemente tras el ejercicio, mezclados con agua o jugo."
+    descripcion: "Pensado para quienes entrenan regularmente y desean mejorar su rendimiento físico. La creatina ayuda a aumentar la fuerza y acelerar la recuperación muscular. Tomar 3-5 gramos diarios, preferentemente tras el ejercicio, mezclados con agua o jugo."
   },
   {
     id: 3,
-    nombre: "Creatina 300g Pote Star Nutrition",
+    nombre: "Creatina 300g Doypack Star Nutrition",
     tipo: "Creatina",
-    precio: 31999,
+    precio: 34500,
     imagen: "../IMG/CREATINA/CreatinaPack300g.webp",
     descripcion: "Creatina micronizada para una absorción rápida y eficaz, ideal para deportistas que realizan entrenamientos intensos. Favorece la fuerza y la resistencia muscular. Se recomienda consumir 3-5 gramos diarios después de entrenar, disuelta en agua o jugo."
   },
@@ -119,14 +119,14 @@ const productos = [
     imagen: "../IMG/COLAGENO/Colageno10g.webp",
     descripcion: "Suplemento con colágeno hidrolizado que favorece la salud de articulaciones, piel y cabello. Con agradable sabor naranja. Tomar una dosis diaria disuelta en agua o jugo para mejores resultados."
   },
-  {
+  /*{
     id: 17,
     nombre: "Colágeno 210g",
     tipo: "Colageno",
     precio: 20000,
     imagen: "../IMG/COLAGENO/Colageno210g.webp",
     descripcion: "Fórmula completa para fortalecer huesos, articulaciones y mejorar la elasticidad de la piel. Se recomienda tomar una dosis diaria disuelta en líquido, preferentemente por la mañana."
-  },
+  },*/
   {
     id: 18,
     nombre: "L-Carnitina",
@@ -135,20 +135,20 @@ const productos = [
     imagen: "../IMG/L-Carnitine/L-carnitine.png",
     descripcion: "Ayuda a transformar la grasa en energía, mejorando el rendimiento físico y la quema de grasa. Ideal para combinar con actividad física. Tomar 1-2 dosis antes del ejercicio diario."
   },
-  {
+  /*{
     id: 19,
-    nombre: "Creatina 150g Star Nutrition",
+    nombre: "Multivitaminico 150g Star Nutrition",
     tipo: "Multivitaminico",
     precio: 18800,
     imagen: "../IMG/MULTIVITAMINICO/Multivitaminico-60capsulas.webp",
     descripcion: "Complejo multivitamínico que aporta vitaminas y minerales esenciales para mantener el equilibrio corporal y apoyar el metabolismo diario. Tomar una cápsula al día con agua durante las comidas."
-  },
-  {
+  },*/
+  /*{
     id: 20,
     nombre: "Beta Alanina 150g Star Nutrition",
     tipo: "Beta Alanina",
     precio: 18800,
     imagen: "../IMG/BETAALANINA/BetaAlanina300g.webp",
     descripcion: "Suplemento que mejora la resistencia muscular y retrasa la fatiga durante entrenamientos intensos. Tomar entre 3 y 6 gramos diarios, divididos en dosis antes del ejercicio para mejores resultados."
-  }
+  }*/
 ];
