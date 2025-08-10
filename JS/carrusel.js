@@ -9,10 +9,9 @@
 
     // Desplazar al item correspondiente
     const scrollToIndex = (i) => {
-      carruselItems[i].scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest"
+      carruselLista.scrollTo({
+        left: carruselItems[i].offsetLeft,
+        behavior: "smooth"
       });
     };
 
