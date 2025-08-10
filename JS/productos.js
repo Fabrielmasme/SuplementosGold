@@ -135,14 +135,14 @@ const productos = [
     imagen: "../IMG/L-Carnitine/L-carnitine.png",
     descripcion: "Ayuda a transformar la grasa en energía, mejorando el rendimiento físico y la quema de grasa. Ideal para combinar con actividad física. Tomar 1-2 dosis antes del ejercicio diario."
   },
-  /*{
+  {
     id: 19,
-    nombre: "Multivitaminico 150g Star Nutrition",
+    nombre: "Multivitaminico Star Nutrition",
     tipo: "Multivitaminico",
-    precio: 18800,
-    imagen: "../IMG/MULTIVITAMINICO/Multivitaminico-60capsulas.webp",
+    precio: 23500,
+    imagen: "../IMG/MULTIVITAMINICO/Multivitaminico_foto_nueva.png",
     descripcion: "Complejo multivitamínico que aporta vitaminas y minerales esenciales para mantener el equilibrio corporal y apoyar el metabolismo diario. Tomar una cápsula al día con agua durante las comidas."
-  },*/
+  },
   /*{
     id: 20,
     nombre: "Beta Alanina 150g Star Nutrition",
@@ -151,4 +151,44 @@ const productos = [
     imagen: "../IMG/BETAALANINA/BetaAlanina300g.webp",
     descripcion: "Suplemento que mejora la resistencia muscular y retrasa la fatiga durante entrenamientos intensos. Tomar entre 3 y 6 gramos diarios, divididos en dosis antes del ejercicio para mejores resultados."
   }*/
+  {
+    id: 21,
+    nombre: "Creatina Microionizada ENA",
+    tipo: "Creatina",
+    precio: 29500,
+    imagen: "../IMG/CREATINA/Creatina_Micronizada_ENA-removebg-preview.png",
+    descripcion: "Creatina de alta calidad europea diseñada para aumentar la fuerza, energía y acelerar la recuperación muscular. Ideal para deportistas exigentes. Tomar 3-5 gramos diarios, preferentemente tras el entrenamiento, mezclada en agua o jugo."
+  },
+  {
+    id: 22,
+    nombre: "Proteína Doypack Star Nutrition Banana",
+    tipo: "Proteina",
+    precio: 34500,
+    imagen: "../IMG/PROTEINA/Whey_Protein_banana_DOYPACK.png",
+    descripcion: "Proteína en polvo con delicioso sabor a banana, diseñada para favorecer el desarrollo y la recuperación muscular tras el entrenamiento. Aporta un alto contenido de aminoácidos esenciales. Se recomienda tomar una porción de 30 gramos disuelta en agua o leche, preferentemente después del ejercicio."
+  },
+  {
+    id: 23,
+    nombre: "Proteína Doypack Star Nutrition Frutilla",
+    tipo: "Proteina",
+    precio: 34500,
+    imagen: "../IMG/PROTEINA/Whey_protein_frutilla_doypack.png",
+    descripcion: "Proteína en polvo con delicioso sabor a frutilla, diseñada para favorecer el desarrollo y la recuperación muscular tras el entrenamiento. Aporta un alto contenido de aminoácidos esenciales. Se recomienda tomar una porción de 30 gramos disuelta en agua o leche, preferentemente después del ejercicio."
+  },
+  {
+    id: 24,
+    nombre: "Proteína Doypack Star Nutrition Cookies Cream",
+    tipo: "Proteina",
+    precio: 34500,
+    imagen: "../IMG/PROTEINA/Proteina_Doypack_Cookies_Cream.png",
+    descripcion: "Proteína en polvo con delicioso sabor a Cookies Cream, diseñada para favorecer el desarrollo y la recuperación muscular tras el entrenamiento. Aporta un alto contenido de aminoácidos esenciales. Se recomienda tomar una porción de 30 gramos disuelta en agua o leche, preferentemente después del ejercicio."
+  },
+    {
+    id: 25,
+    nombre: "Omega 3 Star Nutrition 60 cápsulas",
+    tipo: "Omega3",
+    precio: 34000,
+    imagen: "../IMG/OMEGA3/Omega3.png",
+    descripcion: "Suplemento de Omega 3 de alta pureza, formulado para favorecer la salud cardiovascular, cerebral y articular. Aporta ácidos grasos esenciales EPA y DHA que contribuyen al buen funcionamiento del organismo. Se recomienda consumir 1 a 2 cápsulas diarias junto con las comidas."
+  }
 ];
