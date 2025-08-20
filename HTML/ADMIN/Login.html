@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+</head>
+<body>
+    <main>
+        <nav>
+            <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Right-Arrow--Streamline-Guidance-Free" height="24" width="24">
+                    <desc>
+                        Right Arrow Streamline Icon: https://streamlinehq.com
+                    </desc>
+                    <path stroke="#000000" d="M8 5c0 0.742 -0.733 1.85 -1.475 2.78 -0.954 1.2 -2.094 2.247 -3.401 3.046C2.144 11.425 0.956 12 0 12m0 0c0.956 0 2.145 0.575 3.124 1.174 1.307 0.8 2.447 1.847 3.401 3.045C7.267 17.15 8 18.26 8 19m-8 -7h24" stroke-width="1"></path>
+                </svg>
+            </a>
+        </nav>
+        <section class="contenedor-login">
+            <article class="header-login">
+                <h1>Inicio de sesion solo administradores</h1>
+            </article>
+            <form action="" method="post" class="formulario-login">
+                <section class="formulario-campos">
+                    <label for="email" class="sr-only"></label>
+                        <input 
+                            type="text" 
+                            id="usuario"
+                            name="usuario"
+                            placeholder="Usuario :" 
+                            required
+                        >
+                </section>
+                <section class="formulario-campos">
+                    <label for="password" class="sr-only"></label>
+                    <input 
+                        type="password" 
+                        id="contrasenia"
+                        name="contrasenia"
+                        placeholder="Contraseña:" 
+                        required
+                    >
+                </section>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

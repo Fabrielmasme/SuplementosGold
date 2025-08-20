@@ -1,5 +1,4 @@
 @use 'abstracts/variables';
-@use 'abstracts/mixins';
 
 @use 'base/reset';
 @use 'base/base';
@@ -14,5 +13,7 @@
 @use 'pages/productos';
 @use 'pages/nosotros';
 @use 'pages/producto';
+//admin
+@use 'pages/login';
 
 @use 'themes/default';

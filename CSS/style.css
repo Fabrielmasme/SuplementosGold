@@ -162,19 +162,40 @@ header nav ul {
   list-style: none;
   margin: 0 10rem 0 0;
 }
+header nav ul li {
+  display: flex;
+  align-items: center;
+}
 header nav ul li a {
   color: #fff;
   font-weight: bold;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
 }
 header nav ul li a:hover {
   color: rgba(255, 225, 56, 0.937254902);
+}
+header .btnLogin {
+  gap: 8px;
+  padding: 8px 14px;
+  color: rgba(255, 225, 56, 0.937254902);
+  border-radius: 7px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 225, 56, 0.937254902);
+  background: transparent;
+  font-weight: bold;
 }
 @media (max-width: 1024px) {
   header nav ul {
     gap: 3rem;
     margin: 0 3rem 0 0;
+  }
+  header .btnLogin {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    gap: 6px;
   }
 }
 @media (max-width: 800px) {
@@ -200,6 +221,12 @@ header nav ul li a:hover {
     display: block;
     padding: 0.5rem 0;
     width: 100%;
+  }
+  header .btnLogin {
+    width: 100%;
+    justify-content: center;
+    padding: 3px 7px;
+    font-size: 0.9rem;
   }
 }
 
@@ -732,6 +759,58 @@ main {
     padding: 1rem;
     gap: 1rem;
   }
+}
+nav {
+  background: rgb(216, 216, 216);
+  border: 1px solid #2c3e50;
+  border-radius: 6px;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  width: 5rem;
+}
+
+nav:hover {
+  background: rgb(226, 226, 226);
+}
+
+.contenedor-login {
+  width: 70%;
+  height: auto;
+  margin: auto;
+  padding: 1rem;
+  border: 2px solid rgb(173, 173, 173);
+  border-radius: 10px;
+}
+
+.header-login {
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 6px 6px 0 0;
+}
+
+h1 {
+  font-size: 1rem;
+  border-bottom: none;
+  margin: 2rem 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: red;
+}
+
+.formulario-campos {
+  background-color: aquamarine;
+  height: auto;
+}
+
+label {
+  width: 100%;
+  background-color: pink;
 }
 
 /*# sourceMappingURL=style.css.map */
