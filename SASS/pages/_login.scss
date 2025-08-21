@@ -1,16 +1,11 @@
 @import '../abstracts/variables';
 
-nav{
-    background: rgb(216, 216, 216);
+.nav-login{
     border: 1px solid $primario;
     border-radius: 6px;
     color: white;
     padding: 0.5rem;
     text-align: center;
-    width: 5rem;
-}
-nav:hover{
-    background: rgb(226, 226, 226);
 }
 .contenedor-login{
     width: 70%;
@@ -41,7 +36,7 @@ form{
     background-color: aquamarine;
     height: auto;
 }
-label{
+.formulario-campos label{
     width: 100%;
     background-color: pink;
 }

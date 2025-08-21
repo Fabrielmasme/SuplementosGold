@@ -139,94 +139,109 @@ a {
   margin: 32rem 0;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 header {
+  background-color: #252522;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #252522;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-header a {
-  text-decoration: none;
+  /* ----------------- RESPONSIVE ----------------- */
 }
 header .logo {
   width: 80px;
   height: auto;
   border-radius: 50%;
 }
+header nav {
+  display: flex;
+}
 header nav ul {
   display: flex;
-  justify-content: space-evenly;
-  gap: 10rem;
+  align-items: center;
+  gap: 2rem;
   list-style: none;
-  margin: 0 10rem 0 0;
+  margin: 0;
+  padding: 0;
 }
 header nav ul li {
   display: flex;
   align-items: center;
 }
-header nav ul li a {
-  color: #fff;
+header nav ul a {
+  color: white;
   font-weight: bold;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-  display: inline-flex;
-  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
 }
-header nav ul li a:hover {
-  color: rgba(255, 225, 56, 0.937254902);
+header nav ul a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
 }
 header .btnLogin {
+  display: inline-flex;
+  align-items: center;
   gap: 8px;
   padding: 8px 14px;
-  color: rgba(255, 225, 56, 0.937254902);
-  border-radius: 7px;
-  font-size: 0.8rem;
-  border: 1px solid rgba(255, 225, 56, 0.937254902);
-  background: transparent;
+  font-size: 0.85rem;
   font-weight: bold;
+  border-radius: 7px;
+  border: 1px solid rgba(255, 225, 56, 0.937254902);
+  color: rgba(255, 225, 56, 0.937254902);
+  background: transparent;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+header .btnLogin svg {
+  width: 20px;
+  height: 20px;
+}
+header .btnLogin:hover {
+  background-color: rgba(255, 225, 56, 0.937254902);
+  color: #252522;
+}
+header .btnLogin:hover svg path {
+  stroke: #252522;
 }
 @media (max-width: 1024px) {
   header nav ul {
-    gap: 3rem;
-    margin: 0 3rem 0 0;
+    gap: 1.5rem;
   }
   header .btnLogin {
     padding: 6px 12px;
-    font-size: 0.75rem;
-    gap: 6px;
+    font-size: 0.8rem;
   }
 }
 @media (max-width: 800px) {
   header {
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
   }
   header .logo {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
-  header header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  header nav {
+    width: 100%;
   }
   header nav ul {
-    margin: center;
-    padding: 0;
-    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
   }
-  header nav ul li a {
-    display: block;
-    padding: 0.5rem 0;
-    width: 100%;
+}
+@media (max-width: 480px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
   }
   header .btnLogin {
     width: 100%;
     justify-content: center;
-    padding: 3px 7px;
-    font-size: 0.9rem;
   }
 }
 
@@ -437,7 +452,7 @@ main .productos button a {
   font-size: 1rem;
 }
 main .productos button:hover {
-  background-color: rgba(255, 217.3115577889, 5, 0.937254902);
+  background-color: rgba(255, 225, 56, 0.937254902);
 }
 @media (max-width: 900px) {
   main .caracteristicas {
@@ -760,18 +775,12 @@ main {
     gap: 1rem;
   }
 }
-nav {
-  background: rgb(216, 216, 216);
+.nav-login {
   border: 1px solid #2c3e50;
   border-radius: 6px;
   color: white;
   padding: 0.5rem;
   text-align: center;
-  width: 5rem;
-}
-
-nav:hover {
-  background: rgb(226, 226, 226);
 }
 
 .contenedor-login {
@@ -808,7 +817,7 @@ form {
   height: auto;
 }
 
-label {
+.formulario-campos label {
   width: 100%;
   background-color: pink;
 }

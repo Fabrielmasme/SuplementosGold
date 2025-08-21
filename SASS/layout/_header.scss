@@ -1,99 +1,124 @@
 @import "../abstracts/variables";
-
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: $fondo-header;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 
-  a {
-    text-decoration: none;
-  }
+  display: flex;
+  justify-content: space-between; // Logo a la izquierda, nav a la derecha
+  align-items: center;
 
+  // LOGO
   .logo {
     width: 80px;
     height: auto;
     border-radius: 50%;
   }
-  nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 10rem;
-    list-style: none;
-    margin: 0 10rem 0 0;
 
-    li {
-      display: flex;               // Fuerza que todos los items tengan el mismo comportamiento
-      align-items: center;         // Centra verticalmente su contenido
+  // NAV PRINCIPAL
+  nav {
+    display: flex;
+    
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 2rem; // separación entre items
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+      }
+
+      a {
+          color: white;
+          font-weight: bold;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+          }
+        }
+    }
+  }
+
+  // BOTÓN LOGIN (ADMIN)
+  .btnLogin {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 7px;
+    border: 1px solid $dorado-claro;
+    color: $dorado-claro;
+    background: transparent;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
     }
 
-    li a {
-      color: #fff;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-      display: inline-flex;        // Hace que todos los enlaces usen flex, igualando altura de línea
-      align-items: center;
+    &:hover {
+      background-color: $dorado-claro;
+      color: $fondo-header;
 
-      &:hover {
-        color: $dorado-claro;
+      svg path {
+        stroke: $fondo-header;
       }
     }
   }
 
-  .btnLogin {
-    gap: 8px;                     
-    padding: 8px 14px;            
-    color: $dorado-claro;                  
-    border-radius: 7px;
-    font-size: 0.8rem;
-    border: 1px solid $dorado-claro;
-    background: transparent;
-    font-weight: bold;
-  }
+  /* ----------------- RESPONSIVE ----------------- */
 
   @media (max-width: 1024px) {
     nav ul {
-      gap: 3rem;
-      margin: 0 3rem 0 0;
+      gap: 1.5rem;
     }
     .btnLogin {
       padding: 6px 12px;
-      font-size: 0.75rem;
-      gap: 6px;
+      font-size: 0.8rem;
     }
   }
 
   @media (max-width: 800px) {
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
 
     .logo {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
-    header{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    nav ul {
-      margin: center;
-      padding: 0;
+
+    nav {
       width: 100%;
-      li a {
-        display: block;
-        padding: 0.5rem 0;
-        width: 100%;
+      ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem 1.5rem;
       }
     }
+  }
+
+  @media (max-width: 480px) {
+    nav ul {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
     .btnLogin {
-      width: 100%;                
-      justify-content: center;    
-      padding: 3px 7px;              
-      font-size: 0.9rem;
+      width: 100%;
+      justify-content: center;
     }
   }
 }

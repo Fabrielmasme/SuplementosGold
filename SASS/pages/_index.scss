@@ -174,7 +174,7 @@ main {
       }
 
       &:hover {
-        background-color: darken($dorado-claro, 10%);
+        background-color: $dorado-claro;
       }
     }
   }
