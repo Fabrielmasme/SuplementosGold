@@ -25,7 +25,6 @@ a {
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(44, 62, 80, 0.1);
   width: 20rem;
-  padding: 15px 20px;
   text-align: center;
   transition: box-shadow 0.3s ease;
 }
@@ -33,16 +32,12 @@ a {
   box-shadow: 0 6px 15px rgba(44, 62, 80, 0.2);
 }
 .producto-card img {
-  width: 15rem;
-  height: 18rem;
-  object-fit: cover;
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
   display: block;
-  margin: 0 auto;
-  border-radius: 8px;
+  margin: 1rem auto;
   margin-bottom: 12px;
-}
-.producto-card img:hover {
-  transform: scale(1.05);
 }
 .producto-card h3 {
   color: #2c3e50;
@@ -57,19 +52,15 @@ a {
   color: rgb(16.8548387097, 23.75, 30.6451612903);
 }
 .producto-card a {
+  width: 100%;
+  height: 100%;
   display: inline-block;
   text-decoration: none;
   color: #252522;
-  background-color: #25d366;
-  padding: 8px 18px;
-  border-radius: 25px;
-  font-weight: 600;
-  box-shadow: 0 3px 7px rgba(44, 62, 80, 0.2);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 15px 20px;
 }
 .producto-card a:hover {
-  background-color: rgba(255, 217.3115577889, 5, 0.937254902);
-  color: #fff;
+  transform: scale(1.05);
 }
 
 @media (max-width: 1024px) {
