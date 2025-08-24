@@ -83,7 +83,7 @@ const productos = [
     id: 11,
     nombre: "Pre Entreno Star Nutrition Blue Raz 240g",
     tipo: "Pre Entreno",
-    precio: 21999,
+    precio: 23999,
     imagen: "../IMG/PRE-ENTRENO/PreEntrenoTntstartDynamiteblueraze240g.webp",
     descripcion: "Mejora la energía, el enfoque y la resistencia durante el entrenamiento. Formulado para maximizar tu rendimiento. Tomar una porción 20-30 minutos antes de entrenar, mezclada con agua."
   },
