@@ -51,7 +51,7 @@ const productos = [
     id: 7,
     nombre: "Proteína Xtrength 907g Chocolate",
     tipo: "Proteina",
-    precio: 36000,
+    precio: 33000,
     imagen: "../IMG/PROTEINA/ProteinaXtrenght907gChocolate.webp",
     descripcion: "Fórmula potente diseñada para favorecer el crecimiento muscular y la recuperación. Con intenso sabor a chocolate, aporta proteínas de alta calidad para optimizar tu entrenamiento. Se recomienda tomar 30 gramos después de la actividad física, mezclado en agua o leche."
   },
@@ -97,7 +97,7 @@ const productos = [
   },
   {
     id: 13,
-    nombre: "Citrato de Magnesio 105g Natuliv - ENA",
+    nombre: "Citrato de Magnesio 105g Natuliv",
     tipo: "Magnesio",
     precio: 14000,
     imagen: "../IMG/MAGNESIO/CitratoDeMagnesioLimonada.webp",
@@ -190,5 +190,29 @@ const productos = [
     precio: 34000,
     imagen: "../IMG/OMEGA3/Omega3.png",
     descripcion: "Suplemento de Omega 3 de alta pureza, formulado para favorecer la salud cardiovascular, cerebral y articular. Aporta ácidos grasos esenciales EPA y DHA que contribuyen al buen funcionamiento del organismo. Se recomienda consumir 1 a 2 cápsulas diarias junto con las comidas."
+  },
+    {
+    id: 26,
+    nombre: "Creatina one fit 200g",
+    tipo: "Creatina",
+    precio: 16000,
+    imagen: "../IMG/CREATINA/Creatina_OneFit.png",
+    descripcion: "Creatina de alta calidad diseñada para aumentar la fuerza, energía y acelerar la recuperación muscular. Ideal para deportistas exigentes. Tomar 3-5 gramos diarios, preferentemente tras el entrenamiento, mezclada en agua o jugo."
+  },
+  {
+    id: 27,
+    nombre: "Citrato de magnesio ENA 60 capsulas",
+    tipo: "Magnesio",
+    precio: 14000,
+    imagen: "../IMG/MAGNESIO/Citrato_Magnesio_ENA.png",
+    descripcion: "Mineral esencial que regula las funciones musculares y nerviosas, ayudando a prevenir calambres y mejorar el bienestar general. Con sabor refrescante a limonada. Disolver una cucharadita en agua y tomar una vez al día."
+  },
+  {
+    id: 28,
+    nombre: "Hydro BCAA Pro xtrength",
+    tipo: "Bcaa",
+    precio: 29500,
+    imagen: "../IMG/BCAA/Hydro_BCAA_Pro_xtrength.png",
+    descripcion: "Aminoácidos esenciales que favorecen la recuperación muscular y reducen el catabolismo durante entrenamientos intensos. Ideal para tomar 5-10 gramos antes o durante la actividad física para mejorar resistencia y evitar fatiga."
   }
 ];
