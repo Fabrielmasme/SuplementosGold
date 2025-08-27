@@ -7,7 +7,6 @@
     let index = 0;
     const totalItems = carruselItems.length;
 
-    // Desplazar al item correspondiente
     const scrollToIndex = (i) => {
       carruselLista.scrollTo({
         left: carruselItems[i].offsetLeft,
@@ -15,13 +14,11 @@
       });
     };
 
-    // Botón siguiente
     btnSiguiente.addEventListener("click", () => {
       index = (index + 1) % totalItems;
       scrollToIndex(index);
     });
 
-    // Botón anterior
     btnAnterior.addEventListener("click", () => {
       index = (index - 1 + totalItems) % totalItems;
       scrollToIndex(index);
