@@ -214,5 +214,29 @@ const productos = [
     precio: 29500,
     imagen: "../IMG/BCAA/Hydro_BCAA_Pro_xtrength.png",
     descripcion: "Aminoácidos esenciales que favorecen la recuperación muscular y reducen el catabolismo durante entrenamientos intensos. Ideal para tomar 5-10 gramos antes o durante la actividad física para mejorar resistencia y evitar fatiga."
+  },
+  {
+    id: 29,
+    nombre: "Proteína Ena Truemade",
+    tipo: "Proteina",
+    precio: 39700,
+    imagen: "../IMG/PROTEINA/ProteinaEnaTruemade.png",
+    descripcion: "Proteína en polvo con delicioso sabor a Cookies Cream, diseñada para favorecer el desarrollo y la recuperación muscular tras el entrenamiento. Aporta un alto contenido de aminoácidos esenciales. Se recomienda tomar una porción de 30 gramos disuelta en agua o leche, preferentemente después del ejercicio."
+  },
+  {
+    id: 30,
+    nombre: "Proteína OneFit",
+    tipo: "Proteina",
+    precio: 24500,
+    imagen: "../IMG/PROTEINA/ProteinaOneFitClassic.png",
+    descripcion: "Proteína en polvo con delicioso sabor a Cookies Cream, diseñada para favorecer el desarrollo y la recuperación muscular tras el entrenamiento. Aporta un alto contenido de aminoácidos esenciales. Se recomienda tomar una porción de 30 gramos disuelta en agua o leche, preferentemente después del ejercicio."
+  },
+  {
+    id: 31,
+    nombre: "Shaker Ena",
+    tipo: "Shaker",
+    precio: 6000,
+    imagen: "../IMG/SHAKER/ShakerEnaTruemade.png",
+    descripcion: "Vaso mezclador con tapa hermética, ideal para preparar proteínas, pre-entrenos y otros suplementos. Diseño ergonómico con medidas graduadas. Perfecto para llevar al gimnasio o usar en casa."
   }
 ];
