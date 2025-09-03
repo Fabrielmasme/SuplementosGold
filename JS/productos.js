@@ -1,4 +1,4 @@
-const productos = [
+/*const productos = [
   {
     id: 1,
     nombre: "Creatina 150g Star Nutrition",
@@ -127,7 +127,7 @@ const productos = [
     imagen: "../IMG/COLAGENO/Colageno210g.webp",
     descripcion: "Fórmula completa para fortalecer huesos, articulaciones y mejorar la elasticidad de la piel. Se recomienda tomar una dosis diaria disuelta en líquido, preferentemente por la mañana."
   },*/
-  {
+/*  {
     id: 18,
     nombre: "L-Carnitina",
     tipo: "L Carnitina",
@@ -151,7 +151,7 @@ const productos = [
     imagen: "../IMG/BETAALANINA/BetaAlanina300g.webp",
     descripcion: "Suplemento que mejora la resistencia muscular y retrasa la fatiga durante entrenamientos intensos. Tomar entre 3 y 6 gramos diarios, divididos en dosis antes del ejercicio para mejores resultados."
   }*/
-  {
+/*  {
     id: 21,
     nombre: "Creatina Microionizada ENA",
     tipo: "Creatina",
@@ -183,12 +183,13 @@ const productos = [
     imagen: "../IMG/PROTEINA/Proteina_Doypack_Cookies_Cream.png",
     descripcion: "Proteína en polvo con delicioso sabor a Cookies Cream, diseñada para favorecer el desarrollo y la recuperación muscular tras el entrenamiento. Aporta un alto contenido de aminoácidos esenciales. Se recomienda tomar una porción de 30 gramos disuelta en agua o leche, preferentemente después del ejercicio."
   },
-    {
+  {
     id: 25,
     nombre: "Omega 3 Star Nutrition 60 cápsulas",
     tipo: "Omega3",
     precio: 34000,
     imagen: "../IMG/OMEGA3/Omega3.png",
     descripcion: "Suplemento de Omega 3 de alta pureza, formulado para favorecer la salud cardiovascular, cerebral y articular. Aporta ácidos grasos esenciales EPA y DHA que contribuyen al buen funcionamiento del organismo. Se recomienda consumir 1 a 2 cápsulas diarias junto con las comidas."
-  }
+  },
 ];
+*/

@@ -3,49 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Admin</title>
-    <link rel="stylesheet" href="../../CSS/style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
-    <main>
-        <nav class="nav-login">
-            <a href="">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Right-Arrow--Streamline-Guidance-Free" height="24" width="24">
-                    <desc>
-                        Right Arrow Streamline Icon: https://streamlinehq.com
-                    </desc>
-                    <path stroke="#000000" d="M8 5c0 0.742 -0.733 1.85 -1.475 2.78 -0.954 1.2 -2.094 2.247 -3.401 3.046C2.144 11.425 0.956 12 0 12m0 0c0.956 0 2.145 0.575 3.124 1.174 1.307 0.8 2.447 1.847 3.401 3.045C7.267 17.15 8 18.26 8 19m-8 -7h24" stroke-width="1"></path>
-                </svg>
-            </a>
-        </nav>
-        <section class="contenedor-login">
-            <article class="header-login">
-                <h1>Inicio de sesion solo administradores</h1>
-            </article>
-            <form action="" method="post" class="formulario-login">
-                <section class="formulario-campos">
-                    <label for="email" class="sr-only"></label>
-                        <input 
-                            type="text" 
-                            id="usuario"
-                            name="usuario"
-                            placeholder="Usuario :" 
-                            required
-                        >
-                </section>
-                <section class="formulario-campos">
-                    <label for="password" class="sr-only"></label>
-                    <input 
-                        type="password" 
-                        id="contrasenia"
-                        name="contrasenia"
-                        placeholder="Contraseña:" 
-                        required
-                    >
-                </section>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>🛍️ Sistema de Productos</h1>
+            <p>Ingresa tus credenciales para acceder</p>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+
+            <button type="submit" class="btn-login" id="loginBtn">
+                Iniciar Sesión
+            </button>
+        </form>
+    </div>
+        <script type="module">
+        // Configuración de Supabase
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+        const supabaseUrl = "https://jfwubqdplpbqzelkqyai.supabase.co";
+        const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impmd3VicWRwbHBicXplbGtxeWFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY2NzI2NTIsImV4cCI6MjA3MjI0ODY1Mn0.9JNal4k9S_gCEoxSCX_TgmVx-v8Sh8XsXYQdTgSDfQc";
+        
+        const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Elementos del DOM
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+        const loginBtn = document.getElementById('loginBtn');
+
+        // Función para mostrar errores
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+        }
+
+        // Función para ocultar errores
+        function hideError() {
+            errorMessage.style.display = 'none';
+        }
+
+        // Función para mostrar loading
+        function showLoading() {
+            loginBtn.disabled = true;
+            loginBtn.innerHTML = '<span class="loading"></span>Iniciando sesión...';
+        }
+
+        // Función para ocultar loading
+        function hideLoading() {
+            loginBtn.disabled = false;
+            loginBtn.innerHTML = 'Iniciar Sesión';
+        }
+
+        // Función para manejar el login
+        async function handleLogin(usuario, contrasena) {
+            try {
+                // Consultar la tabla administrador
+                const { data, error } = await supabase
+                    .from('administrador')
+                    .select('*')
+                    .eq('usuario', usuario)
+                    .eq('contrasena', contrasena)
+                    .single();
+
+                if (error || !data) {
+                    throw new Error('Usuario o contraseña incorrectos');
+                }
+
+                // Guardar sesión en localStorage
+                localStorage.setItem('admin_session', JSON.stringify({
+                    id: data.id,
+                    usuario: data.usuario,
+                    loginTime: new Date().toISOString()
+                }));
+
+                // Redireccionar al dashboard
+                window.location.href = 'dashboard.html';
+
+            } catch (error) {
+                showError(error.message);
+                console.error('Error en login:', error);
+            }
+        }
+
+        // Event listener para el formulario
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            hideError();
+            showLoading();
+
+            const usuario = document.getElementById('usuario').value.trim();
+            const contrasena = document.getElementById('contrasena').value.trim();
+
+            if (!usuario || !contrasena) {
+                showError('Por favor, completa todos los campos');
+                hideLoading();
+                return;
+            }
+
+            await handleLogin(usuario, contrasena);
+            hideLoading();
+        });
+
+        // Verificar si ya hay una sesión activa
+        window.addEventListener('DOMContentLoaded', () => {
+            const session = localStorage.getItem('admin_session');
+            if (session) {
+                // Si ya hay sesión, redirigir al dashboard
+                window.location.href = 'dashboard.html';
+            }
+        });
+    </script>
 </body>
 </html>
