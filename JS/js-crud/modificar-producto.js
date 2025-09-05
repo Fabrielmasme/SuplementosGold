@@ -126,3 +126,5 @@ formModificar.addEventListener("submit", async (e) => {
 
 // 🔹 Cargar productos al inicio
 cargarProductos();
+
+
