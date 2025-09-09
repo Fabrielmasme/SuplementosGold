@@ -1,8 +1,8 @@
-import { supabase } from "../config/supabase.js"; // tu config de supabase
+import { supabase } from "../JS/config/supabase.js";
 
 const contenedor = document.getElementById("contenedor-productos");
 
-// 🔹 Obtener productos de la base de datos
+// Obtiene productos de la base de datos
 async function obtenerProductos() {
   let { data: productos, error } = await supabase
     .from("productos") // nombre de tu tabla
@@ -16,7 +16,7 @@ async function obtenerProductos() {
   return productos;
 }
 
-// 🔹 Renderizar productos en tarjetas
+// Renderiza productos en tarjetas
 async function renderizarProductos() {
   const lista = await obtenerProductos();
 
@@ -29,12 +29,12 @@ async function renderizarProductos() {
       <img src="${producto.imagen_url}" alt="${producto.nombre}">
       <h3>${producto.nombre}</h3>
       <p>Precio: $${producto.precio}</p>
-      <a href="../HTML/producto.html?id=${producto.id}">Ver detalle</a>
+      <a href="../../HTML/producto.html?id=${producto.id}">Ver detalle</a>
     `;
 
     contenedor.appendChild(div);
   });
 }
 
-// 🔹 Ejecutar al cargar la página
+// Ejecuta al cargar la página
 renderizarProductos();
