@@ -187,14 +187,12 @@ header .btnLogin {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 14px;
   font-size: 0.85rem;
   font-weight: bold;
   border-radius: 7px;
   border: 1px solid rgba(255, 225, 56, 0.937254902);
   color: rgba(255, 225, 56, 0.937254902);
   background: transparent;
-  white-space: nowrap;
   transition: all 0.3s ease;
 }
 header .btnLogin svg {

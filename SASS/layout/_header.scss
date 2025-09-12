@@ -11,7 +11,6 @@ header {
   justify-content: space-between; // Logo a la izquierda, nav a la derecha
   align-items: center;
 
-  // LOGO
   .logo {
     width: 80px;
     height: auto;
@@ -55,14 +54,12 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 14px;
     font-size: 0.85rem;
     font-weight: bold;
     border-radius: 7px;
     border: 1px solid $dorado-claro;
     color: $dorado-claro;
     background: transparent;
-    white-space: nowrap;
     transition: all 0.3s ease;
 
     svg {

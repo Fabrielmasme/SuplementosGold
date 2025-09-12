@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/style.css">
     <title>Inicio</title>
 </head>
 <body>
     <h1>Inicio Admin</h1>
+    
     <ul>
         <li>
             <a href="../html-crud/agregar.html">agregar</a>
@@ -18,17 +20,10 @@
             <a href="../html-crud/modificar.html">modificar</a>
         </li>
     </ul>
+
     <button id="logoutBtn">Cerrar Sesión</button>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const usuarioLogueado = localStorage.getItem("usuarioLogueado");
-            if (!usuarioLogueado) {
-                window.location.href = "login.html";
-            }
-        });
-    </script>
-
-    <script type="module"  src="../../JS/js-crud/cerrarSesion.js"></script>
+    <script type="module"  src="../../JS/Auth/cerrarSesion.js"></script>
+    <script type="module" src="../../JS/Auth/verificarSesion.js"></script>
 </body>
 </html>
