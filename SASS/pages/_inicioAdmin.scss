@@ -1,0 +1,112 @@
+@import"../abstracts/variables";
+
+h1 {
+  background-color: $fondo-header;
+  color: $dorado-claro;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Navegación */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap; // ayuda en pantallas chicas
+  justify-content: center;
+}
+
+li {
+  background: $primario;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+
+  a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: $dorado-claro;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      color: white;
+
+    }
+  }
+}
+
+#logoutBtn {
+  background-color: $primario;
+  color: $dorado-claro;
+  border: 2px solid $dorado-claro;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-bottom: 2rem;
+  width: 10rem;
+
+  &:hover {
+    color: white;
+    transform: translateY(-3px);
+
+  }
+}
+
+@media (max-width: 768px) { // Tablets
+  h1 {
+    font-size: 1.6rem;
+    padding: 0.8rem 0;
+  }
+
+  ul {
+    gap: 1rem;
+  }
+
+  li a {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  #logoutBtn {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.4rem;
+  }
+}
+
+@media (max-width: 480px) { // Celulares
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  li a {
+    width: 10rem;
+    text-align: center;
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+
+  #logoutBtn {
+    width: 10rem;
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+}
