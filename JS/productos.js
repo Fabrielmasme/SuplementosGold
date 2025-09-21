@@ -43,7 +43,7 @@ const productos = [
     id: 6,
     nombre: "Proteína Doypack Star Nutrition 908g Vainilla",
     tipo: "Proteina",
-    precio: 34500,
+    precio: 40500,
     imagen: "../IMG/PROTEINA/ProteinaStarNutrion908gVainilla.webp",
     descripcion: "Proteína con perfil completo de aminoácidos esenciales y sabor suave a vainilla. Ideal para consumir después del entrenamiento para potenciar la recuperación muscular y el crecimiento. Tomar una porción de 30 gramos disuelta en agua o leche."
   },
