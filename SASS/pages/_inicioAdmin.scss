@@ -1,112 +1,157 @@
 @import"../abstracts/variables";
 
-h1 {
-  background-color: $fondo-header;
-  color: $dorado-claro;
-  text-align: center;
-  width: 100%;
-  padding: 1rem 0;
+body {
+  background: #111;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  font-size: 2rem;
-  letter-spacing: 1px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 2rem;
 }
 
-/* Navegación */
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap; // ayuda en pantallas chicas
-  justify-content: center;
-}
+.admin-header {
+  text-align: center;
+  margin-bottom: 2rem;
 
-li {
-  background: $primario;
-  border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: $dorado-claro;
   }
 
-  a {
-    display: block;
-    padding: 0.8rem 1.5rem;
-    color: $dorado-claro;
-    text-decoration: none;
+  p {
+    color: #aaa;
+    margin-top: 0.5rem;
+  }
+
+  .btn-logout {
+    margin-top: 1rem;
+    background: #e63946;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
     font-weight: bold;
 
     &:hover {
-      color: white;
-
+      background: #d62828;
     }
   }
 }
 
-#logoutBtn {
-  background-color: $primario;
-  color: $dorado-claro;
-  border: 2px solid $dorado-claro;
-  padding: 0.8rem 1.8rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  margin-bottom: 2rem;
-  width: 10rem;
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
 
-  &:hover {
-    color: white;
-    transform: translateY(-3px);
-
-  }
-}
-
-@media (max-width: 768px) { // Tablets
-  h1 {
-    font-size: 1.6rem;
-    padding: 0.8rem 0;
-  }
-
-  ul {
-    gap: 1rem;
-  }
-
-  li a {
+  .btn-primary {
+    background: #2563eb;
+    border: none;
     padding: 0.7rem 1.2rem;
-    font-size: 0.95rem;
-  }
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
 
-  #logoutBtn {
-    font-size: 0.95rem;
-    padding: 0.7rem 1.4rem;
+    &:hover {
+      background: #1d4ed8;
+    }
   }
 }
 
-@media (max-width: 480px) { // Celulares
-  h1 {
-    font-size: 1.3rem;
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  input, select {
+    flex: 1;
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #222;
+    color: #fff;
   }
 
-  ul {
+  select {
+    flex: 0.5;
+    cursor: pointer;
+  }
+}
+
+.suplementos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+
+  .card {
+    background: #1c1c1e;
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+    h3 {
+      margin: 0 0 0.5rem;
+    }
+
+    .marca {
+      color: #bbb;
+      margin-bottom: 0.8rem;
+    }
+
+    .categoria {
+      display: inline-block;
+      padding: 0.3rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: bold;
+
+      &.protein {
+        background: #3b82f6;
+        color: #fff;
+      }
+      &.creatine {
+        background: #10b981;
+        color: #fff;
+      }
+      &.preworkout {
+        background: #ef4444;
+        color: #fff;
+      }
+    }
+  }
+  .suplementos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 20px;
+  }
+
+  .card-producto {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
+    justify-content: space-between;
   }
 
-  li a {
-    width: 10rem;
-    text-align: center;
-    padding: 0.9rem;
-    font-size: 1rem;
+  .producto-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
   }
-
-  #logoutBtn {
-    width: 10rem;
-    font-size: 1rem;
-    padding: 0.9rem;
+  .producto-info {
+    margin: 0.5rem ;
+    padding: 0.3rem;
+    background: #ff0000;
+  }
+  .producto-precio, .producto-stock, .producto-tipo, .producto-nombre, .producto-descripcion {
+    font-weight: bold;
+    color: #28a745;
   }
 }

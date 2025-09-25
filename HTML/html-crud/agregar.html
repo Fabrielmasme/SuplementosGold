@@ -19,7 +19,24 @@
     <label for="stock">Stock:</label><br />
     <input type="number" id="stock" placeholder="Stock" required /><br />
     <label for="tipo">Tipo:</label><br />
-    <input type="text" id="tipo" placeholder="Tipo" /><br />
+
+    <section class="filter-bar">
+      <select id="tipo" aria-label="Filtrar por producto" name="filtro-producto">
+          <option value="">Filtrar por producto</option>
+          <option value="Bcaa">Bcaa</option>
+          <option value="Cafeina">Cafeína</option>
+          <option value="Omega3">Omega 3</option>
+          <option value="Colageno">Colágeno</option>
+          <option value="Creatina">Creatina</option>
+          <option value="Magnesio">Magnesio</option>
+          <option value="Multivitaminico">Multivitamínico</option>
+          <option value="Pancakes">Pancakes</option>
+          <option value="Proteina">Proteína</option>
+          <option value="Pre Entreno">Pre Entreno</option>
+          <option value="L Carnitina">L Carnitina</option>
+      </select>
+    </section>
+
     <label for="imagen">Imagen:</label><br />
     <input type="file" id="imagen" accept="image/*" /><br /><br />
     <button type="submit">Agregar</button>

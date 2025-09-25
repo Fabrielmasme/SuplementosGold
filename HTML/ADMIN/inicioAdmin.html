@@ -7,23 +7,40 @@
     <title>Inicio</title>
 </head>
 <body>
-    <h1>Inicio Admin</h1>
-    
-    <ul>
-        <li>
-            <a href="../html-crud/agregar.html">agregar</a>
-        </li>
-        <li>
-            <a href="../html-crud/eliminar.html">eliminar</a>
-        </li>
-        <li>
-            <a href="../html-crud/modificar.html">modificar</a>
-        </li>
-    </ul>
+    <header class="admin-header">
+        <h1>Gestión de Suplementos</h1>
+        <button id="logoutBtn" class="btn-logout">Cerrar Sesión</button>
+    </header>
 
-    <button id="logoutBtn">Cerrar Sesión</button>
+    <section class="actions">
+        <button class="btn-primary" onclick="window.location.href='../html-crud/agregar.html'">+ Agregar Suplemento</button>
+    </section>
 
-    <script type="module"  src="../../JS/Auth/cerrarSesion.js"></script>
+    <section class="filter-bar">
+        <label for="filtro-producto">Filtrar por producto: </label>
+        <select id="filtro-producto">
+            <option value="">Filtrar por producto</option>
+            <option value="Bcaa">Bcaa</option>
+            <option value="Cafeina">Cafeina</option>
+            <option value="Omega3">Omega 3</option>
+            <option value="Colageno">Colageno</option>
+            <option value="Creatina">Creatina</option>
+            <option value="Magnesio">Magnesio</option>
+            <option value="Multivitaminico">Multivitamínico</option>
+            <option value="Pancakes">Pancakes</option>
+            <option value="Proteina">Proteína</option>
+            <option value="Pre Entreno">Pre Entreno</option>
+            <option value="L Carnitina">L Carnitina</option>
+        </select>
+    </section>
+
+    <section class="suplementos">
+        <!--Acá se pone el js para cargar los productos-->
+    </section>
+
+    <script type="module" src="../../JS/Auth/cerrarSesion.js"></script>
     <script type="module" src="../../JS/Auth/verificarSesion.js"></script>
+    <script type="module" src="../../JS/js-crud/listar-productos-admin.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,110 @@
+@import '../abstracts/variables';
+
+body {
+  background: $fondo-header;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: $dorado-claro;
+  text-align: center;
+}
+
+.boton-volver {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.boton-volver:hover {
+  background-color: #2563eb;
+}
+
+form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+form label {
+  font-weight: bold;
+  color: #374151;
+  display: block;
+  margin: 0.8rem 0 0.4rem;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.filter-bar {
+  margin: 0.8rem 0 1.2rem;
+}
+
+button[type="submit"] {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  width: 100%;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #059669;
+}
+
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  form {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}

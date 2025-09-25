@@ -1,7 +1,10 @@
 @import '../abstracts/variables';
 
-/* Contenedor del login */
+.boton-volver {
+  margin: 2rem auto 0 auto;
+}
 .login-container {
+  margin: 3rem auto;
   background: white;
   border: 1px solid $gris-borde;
   border-radius: 12px;
