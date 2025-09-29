@@ -1,33 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const lista = document.querySelector(".carrusel-lista");
-  const items = document.querySelectorAll(".carrusel-item");
-  const btnAnterior = document.querySelector(".carrusel-btn.anterior");
-  const btnDespues = document.querySelector(".carrusel-btn.despues");
+  const carruselLista = document.querySelector(".carrusel-lista");
+  const carruselItems = document.querySelectorAll(".carrusel-item");
+  const btnAnterior = document.querySelector(".anterior");
+  const btnSiguiente = document.querySelector(".despues");
 
   let index = 0;
-  let intervalo = setInterval(mostrarSiguiente, 5000); // cada 5s
+  const totalItems = carruselItems.length;
 
-  function actualizarCarrusel() {
-    lista.style.transform = `translateX(-${index * 100}%)`;
-  }
+  const scrollToIndex = (i) => {
+    carruselLista.scrollTo({
+      left: carruselItems[i].offsetLeft,
+      behavior: "smooth"
+    });
+  };
 
-  function mostrarAnterior() {
-    index = (index - 1 + items.length) % items.length;
-    actualizarCarrusel();
-    resetearIntervalo();
-  }
+  btnSiguiente.addEventListener("click", () => {
+    index = (index + 1) % totalItems;
+    scrollToIndex(index);
+  });
 
-  function mostrarSiguiente() {
-    index = (index + 1) % items.length;
-    actualizarCarrusel();
-    resetearIntervalo();
-  }
+  btnAnterior.addEventListener("click", () => {
+    index = (index - 1 + totalItems) % totalItems;
+    scrollToIndex(index);
+  });
 
-  function resetearIntervalo() {
-    clearInterval(intervalo);
-    intervalo = setInterval(mostrarSiguiente, 5000);
-  }
+  // Auto-slide
+  const autoSlide = setInterval(() => {
+    index = (index + 1) % totalItems;
+    scrollToIndex(index);
+  }, 5000); // cada 5 segundos
 
-  btnAnterior.addEventListener("click", mostrarAnterior);
-  btnDespues.addEventListener("click", mostrarSiguiente);
+  // (Opcional) Detener auto-slide si el usuario toca o pasa el mouse
+  carruselLista.addEventListener("touchstart", () => clearInterval(autoSlide));
+  carruselLista.addEventListener("mouseenter", () => clearInterval(autoSlide));
 });

@@ -139,11 +139,6 @@ a {
   margin: 32rem 0;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 header {
   background-color: #252522;
   padding: 1rem 2rem;
@@ -180,8 +175,6 @@ header nav ul a {
 }
 header nav ul a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
 }
 header .btnLogin {
   display: inline-flex;
@@ -193,7 +186,6 @@ header .btnLogin {
   border: 1px solid rgba(255, 225, 56, 0.937254902);
   color: rgba(255, 225, 56, 0.937254902);
   background: transparent;
-  transition: all 0.3s ease;
 }
 header .btnLogin svg {
   width: 20px;
@@ -297,57 +289,66 @@ main {
   min-height: 100vh;
 }
 main .carrusel {
-  padding: 2rem 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  height: auto;
 }
-main .carrusel-contenedor {
-  max-width: 1200px;
-  margin: 0 auto;
+main .carrusel img {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  border-radius: 0.5rem;
+  height: 30rem;
+}
+main .carrusel .carrusel img {
+  display: block;
+}
+main .carrusel .carrusel-contenedor {
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
+  overflow: hidden;
+  border-radius: 1rem;
 }
-main .carrusel-btn {
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-  color: #2c3e50;
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s ease;
+main .carrusel .carrusel-lista {
   display: flex;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  list-style: none;
+  width: 90%;
+  padding: 0;
+  margin: 2rem auto;
+}
+main .carrusel .carrusel-lista .carrusel-item {
+  min-width: 100%;
+  height: auto;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-main .carrusel-btn:hover {
-  background: white;
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-main .carrusel-btn.anterior {
-  margin-right: 1rem;
-}
-main .carrusel-btn.despues {
-  margin-left: 1rem;
-}
-main .carrusel-lista {
   display: flex;
-  transition: transform 0.6s ease-in-out;
 }
-main .carrusel-item {
-  flex: 0 0 100%;
-}
-main .carrusel-item img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
+main .carrusel .carrusel-lista .carrusel-item img {
+  width: 80%;
+  height: 40rem;
   display: block;
-  border-radius: 12px;
+  border-radius: 1rem;
+}
+main .carrusel .carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+main .carrusel .carrusel-btn.anterior {
+  left: 0.5rem;
+}
+main .carrusel .carrusel-btn.despues {
+  right: 0.5rem;
 }
 main .texto-presentacion {
   max-width: 1200px;
@@ -575,12 +576,6 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
   border-bottom: 1px solid #ccc;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 main {
@@ -922,14 +917,6 @@ main {
     padding: 0.7rem;
   }
 }
-body {
-  background: #111;
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  margin: 0;
-  padding: 2rem;
-}
-
 .admin-header {
   text-align: center;
   margin-bottom: 2rem;
@@ -1061,16 +1048,6 @@ body {
 .suplementos .producto-precio, .suplementos .producto-stock, .suplementos .producto-tipo, .suplementos .producto-nombre, .suplementos .producto-descripcion {
   font-weight: bold;
   color: #28a745;
-}
-
-body {
-  background: #252522;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 2rem;
 }
 
 h1 {

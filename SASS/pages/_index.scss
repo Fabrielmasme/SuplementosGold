@@ -2,70 +2,76 @@
 main {
   background-color: $gris-fondo;
   min-height: 100vh;
-  
-  // Sección del carrusel
   .carrusel {
-    padding: 2rem 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    
-    &-contenedor {
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      display: flex;
-      align-items: center;
-      padding: 0 1rem;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    height: auto;
+    img {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      border-radius: 0.5rem;
+      height: 30rem;
     }
-    
-    &-btn {
-      background: rgba(255, 255, 255, 0.9);
+    .carrusel img {
+      display: block;
+    }
+
+    .carrusel-contenedor {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+
+    .carrusel-lista {
+      display: flex;
+      overflow:hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      list-style: none;
+      width: 90%;
+      padding: 0;
+      margin: 2rem auto;
+
+      .carrusel-item {
+        min-width: 100%;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        img {
+          width: 80%;
+          height: 40rem;
+          display: block;
+          border-radius: 1rem;
+
+        }
+      }
+    }
+
+    .carrusel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
       border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      color: $primario;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
       cursor: pointer;
       z-index: 10;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      
-      &:hover {
-        background: white;
-        transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-      }
-      
+
       &.anterior {
-        margin-right: 1rem;
+        left: 0.5rem;
       }
-      
+
       &.despues {
-        margin-left: 1rem;
-      }
-    }
-    
-    &-lista {
-      display: flex;
-      transition: transform 0.6s ease-in-out;
-    }
-    
-    &-item {
-      flex: 0 0 100%;
-      
-      img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        display: block;
-        border-radius: 12px;
+        right: 0.5rem;
       }
     }
   }
-  
+
   // Sección de texto de presentación
   .texto-presentacion {
     max-width: 1200px;
