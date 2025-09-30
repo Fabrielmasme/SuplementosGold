@@ -1,65 +1,101 @@
 @import "../abstracts/variables";
-#contenedor-productos {
+
+.suplementos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 20px;
   justify-items: center;
   margin: 3rem 5rem;
 }
 
-.producto-card {
+.card-producto {
   background-color: $gris-fondo;
   border: 1px solid $gris-borde;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba($primario, 0.1);
-  width: 20rem;
+  width: 18rem;
   padding: 15px 20px;
   text-align: center;
   transition: box-shadow 0.3s ease;
 
   &:hover {
-    box-shadow: 0 6px 15px rgba($primario, 0.2);
-  }
-
-  img {
-    height: 220px; 
-    object-fit: contain;
-    display: block;
-    margin: 1rem auto;
-    margin-bottom: 12px;
-  }
-
-  h3 {
-    color: $primario;
-    font-family: $tipografia;
-    font-size: 1.6rem;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-  }
-
-  p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    color: darken($primario, 15%);
-  }
-
-  a {
-    display: inline-block;
-    text-decoration: none;
-    color: $fondo-header;
-    background-color: #25d366;
-    padding: 8px 18px;
-    border-radius: 25px;
-    font-weight: 600;
-    box-shadow: 0 3px 7px rgba($primario, 0.2);
-    transition: background-color 0.3s ease, color 0.3s ease;
-
-    &:hover {
-      background-color: darken($dorado-claro, 10%);
-      color: #fff;
-    }
+    box-shadow: 0 6px 15px rgba($primario, 0.20);
   }
 }
+
+.producto-nombre {
+  color: $primario;
+  font-family: $tipografia;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.producto-tipo {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: darken($primario, 15%);
+  font-weight: 500;
+}
+
+.producto-img-container {
+  height: 220px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.producto-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.producto-descripcion {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: darken($primario, 15%);
+}
+
+.producto-precio {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: $primario;
+}
+
+.producto-stock {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: darken($primario, 15%);
+}
+
+// Si tienes un enlace de WhatsApp u otro botón, agrega:
+.card-producto a {
+  display: inline-block;
+  text-decoration: none;
+  color: $fondo-header;
+  background-color: #25d366;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 3px 7px rgba($primario, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: darken(#25d366, 10%);
+    color: #fff;
+  }
+}
+
+
+
 
 // Separación de media queries para mejorar organización
 

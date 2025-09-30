@@ -11,47 +11,82 @@ a {
   list-style: none;
 }
 
-#contenedor-productos {
+.suplementos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 20px;
   justify-items: center;
   margin: 3rem 5rem;
 }
 
-.producto-card {
+.card-producto {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(44, 62, 80, 0.1);
-  width: 20rem;
+  width: 18rem;
   padding: 15px 20px;
   text-align: center;
   transition: box-shadow 0.3s ease;
 }
-.producto-card:hover {
+.card-producto:hover {
   box-shadow: 0 6px 15px rgba(44, 62, 80, 0.2);
 }
-.producto-card img {
-  height: 220px;
-  object-fit: contain;
-  display: block;
-  margin: 1rem auto;
-  margin-bottom: 12px;
-}
-.producto-card h3 {
+
+.producto-nombre {
   color: #2c3e50;
   font-family: arial, sans-serif;
   font-size: 1.6rem;
   margin-bottom: 8px;
   letter-spacing: 1px;
 }
-.producto-card p {
+
+.producto-tipo {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: rgb(16.8548387097, 23.75, 30.6451612903);
+  font-weight: 500;
+}
+
+.producto-img-container {
+  height: 220px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.producto-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.producto-descripcion {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: rgb(16.8548387097, 23.75, 30.6451612903);
+}
+
+.producto-precio {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.producto-stock {
   font-size: 1.1rem;
   margin-bottom: 15px;
   color: rgb(16.8548387097, 23.75, 30.6451612903);
 }
-.producto-card a {
+
+.card-producto a {
   display: inline-block;
   text-decoration: none;
   color: #252522;
@@ -62,8 +97,8 @@ a {
   box-shadow: 0 3px 7px rgba(44, 62, 80, 0.2);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.producto-card a:hover {
-  background-color: rgba(255, 217.3115577889, 5, 0.937254902);
+.card-producto a:hover {
+  background-color: rgb(29.3911290323, 167.6088709677, 81.0241935484);
   color: #fff;
 }
 
@@ -104,7 +139,7 @@ a {
   gap: 1rem;
   margin: 1.5rem auto 3rem;
   padding: 1rem;
-  background-color: #252522;
+  background-color: #2c3e50;
   border-radius: 1rem;
   max-width: 70%;
 }
@@ -559,7 +594,7 @@ main .productos button a {
   }
 }
 body {
-  background-color: #f9f9f9;
+  background-color: #252522;
 }
 
 h1 {
@@ -631,11 +666,31 @@ main p {
   }
 }
 
+.boton-volver {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 30%;
+  margin: 2rem auto;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  display: flex; /*Se usa para centrar el botn en el centro de la pantalla*/
+  justify-content: center;
+  align-items: center;
+}
+
+.boton-volver:hover {
+  background-color: #2563eb;
+}
+
 main {
   font-family: arial, sans-serif;
 }
 
-.boton-volver {
+/*.boton-volver {
   display: inline-block;
   background-color: #25d366;
   color: #333;
@@ -647,11 +702,11 @@ main {
   margin-bottom: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-.boton-volver:hover {
-  background-color: #179246;
-}
 
+  &:hover {
+    background-color: #179246;
+  }
+}*/
 #detalle-producto {
   padding: 2rem;
   background-color: #f9f9f9;
@@ -743,7 +798,7 @@ main {
   .precio {
     font-size: 1.25rem;
   }
-  .boton-volver, .boton-wpp {
+  .boton-wpp {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
@@ -774,10 +829,6 @@ main {
     text-align: left;
     padding: 1rem 2rem;
   }
-  .boton-volver {
-    width: 60%;
-    padding: 1rem;
-  }
   .boton-wpp {
     width: 100%;
     padding: 1rem;
@@ -790,9 +841,28 @@ main {
   }
 }
 .boton-volver {
-  margin: 2rem auto 0 auto;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 30%;
+  margin: 2rem auto;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  display: flex; /*Se usa para centrar el botn en el centro de la pantalla*/
+  justify-content: center;
+  align-items: center;
 }
 
+.boton-volver:hover {
+  background-color: #2563eb;
+}
+
+/*.boton-volver {
+  margin: 2rem auto 0 auto;
+}*/
 .login-container {
   margin: 3rem auto;
   background: white;
@@ -938,12 +1008,12 @@ main {
   background: #d62828;
 }
 
-.actions {
+.acciones {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 1.5rem;
+  margin: 2rem;
 }
-.actions .btn-primary {
+.acciones .btn-primary {
   background: #2563eb;
   border: none;
   padding: 0.7rem 1.2rem;
@@ -952,16 +1022,16 @@ main {
   cursor: pointer;
   font-weight: 600;
 }
-.actions .btn-primary:hover {
+.acciones .btn-primary:hover {
   background: #1d4ed8;
 }
 
-.filter-bar {
+.filtros-productos {
   display: flex;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin: 2rem;
 }
-.filter-bar input, .filter-bar select {
+.filtros-productos input, .filtros-productos select {
   flex: 1;
   padding: 0.7rem;
   border-radius: 8px;
@@ -970,80 +1040,105 @@ main {
   background: #222;
   color: #fff;
 }
-.filter-bar select {
+.filtros-productos select {
   flex: 0.5;
   cursor: pointer;
 }
 
-.suplementos {
+/*.suplementos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
-}
-.suplementos .card {
-  background: #1c1c1e;
-  padding: 1.2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-.suplementos .card h3 {
-  margin: 0 0 0.5rem;
-}
-.suplementos .card .marca {
-  color: #bbb;
-  margin-bottom: 0.8rem;
-}
-.suplementos .card .categoria {
-  display: inline-block;
-  padding: 0.3rem 0.6rem;
+  padding: 2rem;
+  .card {
+    background: #1c1c1e;
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+    h3 {
+      margin: 0 0 0.5rem;
+    }
+
+    .marca {
+      color: #bbb;
+      margin-bottom: 0.8rem;
+    }
+
+    .categoria {
+      display: inline-block;
+      padding: 0.3rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: bold;
+
+      &.protein {
+        background: #3b82f6;
+        color: #fff;
+      }
+      &.creatine {
+        background: #10b981;
+        color: #fff;
+      }
+      &.preworkout {
+        background: #ef4444;
+        color: #fff;
+      }
+    }
+  }
+  .suplementos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 20px;
+  }
+
+  .card-producto {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .producto-img {
+    width: 100%;
+    height: 220px; 
+    object-fit: contain;
+    display: block;
+    margin: 1rem auto;
+  }
+  .producto-info {
+    margin: 0.5rem ;
+    padding: 0.3rem;
+    background: #ff0000;
+  }
+  .producto-precio, .producto-stock, .producto-tipo, .producto-nombre, .producto-descripcion {
+    font-weight: bold;
+    color: #28a745;
+  }
+}*/
+.boton-volver {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
   border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: bold;
+  cursor: pointer;
+  width: 30%;
+  margin: 2rem auto;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  display: flex; /*Se usa para centrar el botn en el centro de la pantalla*/
+  justify-content: center;
+  align-items: center;
 }
-.suplementos .card .categoria.protein {
-  background: #3b82f6;
-  color: #fff;
-}
-.suplementos .card .categoria.creatine {
-  background: #10b981;
-  color: #fff;
-}
-.suplementos .card .categoria.preworkout {
-  background: #ef4444;
-  color: #fff;
-}
-.suplementos .suplementos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-top: 20px;
-}
-.suplementos .card-producto {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.suplementos .producto-img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  display: block;
-  margin: 1rem auto;
-  margin-bottom: 12px;
-}
-.suplementos .producto-info {
-  margin: 0.5rem;
-  padding: 0.3rem;
-  background: #ff0000;
-}
-.suplementos .producto-precio, .suplementos .producto-stock, .suplementos .producto-tipo, .suplementos .producto-nombre, .suplementos .producto-descripcion {
-  font-weight: bold;
-  color: #28a745;
+
+.boton-volver:hover {
+  background-color: #2563eb;
 }
 
 h1 {
@@ -1053,41 +1148,25 @@ h1 {
   text-align: center;
 }
 
-.boton-volver {
-  background-color: #10b981;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-
-.boton-volver:hover {
-  background-color: #2563eb;
-}
-
-form {
+#form-agregar {
   background: white;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 450px;
+  width: 80%;
+  margin: 2rem auto;
 }
 
-form label {
+#form-agregar label {
   font-weight: bold;
   color: #374151;
   display: block;
   margin: 0.8rem 0 0.4rem;
 }
 
-form input,
-form textarea,
-form select {
+#form-agregar input,
+#form-agregar textarea,
+#form-agregar select {
   width: 100%;
   padding: 0.8rem;
   border: 1px solid #d1d5db;
@@ -1097,9 +1176,9 @@ form select {
   transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-form input:focus,
-form textarea:focus,
-form select:focus {
+#form-agregar input:focus,
+#form-agregar textarea:focus,
+#form-agregar select:focus {
   border-color: #3b82f6;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
 }
@@ -1134,9 +1213,17 @@ button[type=submit]:active {
   transform: scale(0.98);
 }
 
+#filtro-producto {
+  background-color: #2c3e50;
+}
+
+label {
+  color: rgba(255, 225, 56, 0.937254902);
+}
+
 /* Responsivo */
 @media (max-width: 600px) {
-  form {
+  #form-agregar {
     padding: 1.5rem;
   }
   h1 {

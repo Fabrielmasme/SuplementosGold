@@ -1,8 +1,10 @@
 @import "../abstracts/variables";
+@import '../components/boton-volver';
+
 main{
   font-family: $tipografia;
 }
-.boton-volver {
+/*.boton-volver {
   display: inline-block;
   background-color: #25d366;
   color: #333;
@@ -18,7 +20,7 @@ main{
   &:hover {
     background-color: #179246;
   }
-}
+}*/
 #detalle-producto {
   padding: 2rem;
   background-color: $gris-fondo;
@@ -112,7 +114,7 @@ main{
     font-size: 1.25rem;
   }
 
-  .boton-volver, .boton-wpp {
+  .boton-wpp {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
@@ -150,10 +152,6 @@ main{
     padding: 1rem 2rem;
   }
 
-  .boton-volver{
-    width: 60%;
-    padding: 1rem;
-  } 
   .boton-wpp {
     width: 100%;
     padding: 1rem;
