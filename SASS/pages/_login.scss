@@ -68,10 +68,37 @@
     &:focus {
       outline: none;
       border-color: $primario;
-      box-shadow: 0 0 4px rgba(44, 62, 80, 0.3);
     }
   }
 }
+.input-password-container {
+  position: relative;
+  width: 100%;
+
+  input {
+    width: 100%;
+    padding-right: 2.5rem; // espacio para el icono
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.05);
+    }
+  }
+}
+
+
 
 /* Botón login */
 .btn-login {
@@ -94,6 +121,7 @@
     transform: scale(0.97);
   }
 }
+
 
 /* 📱 Responsive Design */
 @media (max-width: 768px) { // Tablet

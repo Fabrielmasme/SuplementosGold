@@ -22,3 +22,17 @@ form.addEventListener("submit", async (e) => {
   // Redirigir si login OK
   window.location.href = "inicioAdmin.html"
 })
+
+
+//Mostrar/Ocultar contraseña
+const togglePassword = document.getElementById("togglePassword");
+const passwordInput = document.getElementById("contrasena");
+
+togglePassword.addEventListener("click", () => {
+  const isPassword = passwordInput.type === "password";
+
+  passwordInput.type = isPassword ? "text" : "password";
+  togglePassword.src = isPassword
+    ? "../../SVG/No-Ve-Contraseña.svg"
+    : "../../SVG/Si-Ve-Contraseña.svg";
+});
