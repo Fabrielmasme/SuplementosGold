@@ -593,18 +593,45 @@ main .productos button a {
     height: 200px;
   }
 }
-body {
-  background-color: #252522;
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
-h1 {
+.producto-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   text-align: center;
-  margin: 5rem 1rem;
-  font-size: 2.5rem;
-  color: #252522;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 1px solid #ccc;
+  transition: transform 0.2s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+}
+
+.producto-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.producto-detalles {
+  padding: 1rem;
+}
+
+.producto-nombre {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.producto-precio {
+  color: #007bff;
+  font-weight: bold;
+  margin-top: 0.5rem;
 }
 
 main {
@@ -667,9 +694,9 @@ main p {
 }
 
 .boton-volver {
-  background-color: #10b981;
-  color: white;
-  border: none;
+  background-color: rgb(25.9032258065, 36.5, 47.0967741935);
+  border: 1px solid rgba(255, 225, 56, 0.937254902);
+  color: rgba(255, 225, 56, 0.937254902);
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   cursor: pointer;
@@ -683,30 +710,12 @@ main p {
 }
 
 .boton-volver:hover {
-  background-color: #2563eb;
+  background-color: rgb(25.9032258065, 36.5, 47.0967741935);
+  box-shadow: rgba(255, 225, 56, 0.937254902) 1px 1px 10px;
+  transform: scale(1.03);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-main {
-  font-family: arial, sans-serif;
-}
-
-/*.boton-volver {
-  display: inline-block;
-  background-color: #25d366;
-  color: #333;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #179246;
-  }
-}*/
 #detalle-producto {
   padding: 2rem;
   background-color: #f9f9f9;
@@ -841,9 +850,9 @@ main {
   }
 }
 .boton-volver {
-  background-color: #10b981;
-  color: white;
-  border: none;
+  background-color: rgb(25.9032258065, 36.5, 47.0967741935);
+  border: 1px solid rgba(255, 225, 56, 0.937254902);
+  color: rgba(255, 225, 56, 0.937254902);
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   cursor: pointer;
@@ -857,12 +866,12 @@ main {
 }
 
 .boton-volver:hover {
-  background-color: #2563eb;
+  background-color: rgb(25.9032258065, 36.5, 47.0967741935);
+  box-shadow: rgba(255, 225, 56, 0.937254902) 1px 1px 10px;
+  transform: scale(1.03);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/*.boton-volver {
-  margin: 2rem auto 0 auto;
-}*/
 .login-container {
   margin: 3rem auto;
   background: white;
@@ -1036,8 +1045,8 @@ main {
   justify-content: flex-end;
   margin: 2rem;
 }
-.acciones .btn-primary {
-  background: #2563eb;
+.acciones .btn-agregar {
+  background-color: #10b981;
   border: none;
   padding: 0.7rem 1.2rem;
   border-radius: 10px;
@@ -1045,8 +1054,36 @@ main {
   cursor: pointer;
   font-weight: 600;
 }
-.acciones .btn-primary:hover {
-  background: #1d4ed8;
+.acciones .btn-agregar:hover {
+  background-color: #059669;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+.acciones .btn-eliminar {
+  background: #e63946;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.acciones .btn-eliminar:hover {
+  background: #d62828;
+}
+.acciones .btn-modificar {
+  background: #3959e6;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.acciones .btn-modificar:hover {
+  background: #0d34e0;
+}
+.acciones button {
+  margin: 1rem;
 }
 
 .filtros-productos {
@@ -1068,86 +1105,121 @@ main {
   cursor: pointer;
 }
 
-/*.suplementos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-  .card {
-    background: #1c1c1e;
-    padding: 1.2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-
-    h3 {
-      margin: 0 0 0.5rem;
-    }
-
-    .marca {
-      color: #bbb;
-      margin-bottom: 0.8rem;
-    }
-
-    .categoria {
-      display: inline-block;
-      padding: 0.3rem 0.6rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: bold;
-
-      &.protein {
-        background: #3b82f6;
-        color: #fff;
-      }
-      &.creatine {
-        background: #10b981;
-        color: #fff;
-      }
-      &.preworkout {
-        background: #ef4444;
-        color: #fff;
-      }
-    }
+@media (max-width: 1024px) {
+  .admin-header {
+    margin-bottom: 1.5rem;
   }
-  .suplementos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 20px;
+  .admin-header h1 {
+    font-size: 1.75rem;
   }
-
-  .card-producto {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    padding: 15px;
-    display: flex;
+  .admin-header p {
+    font-size: 0.95rem;
+  }
+  .admin-header .btn-logout {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.95rem;
+  }
+  .acciones {
+    margin: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .acciones .btn-agregar,
+  .acciones .btn-eliminar,
+  .acciones .btn-modificar {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+  .acciones button {
+    margin: 0.5rem;
+  }
+  .filtros-productos {
+    margin: 1.5rem;
+    gap: 0.8rem;
+  }
+  .filtros-productos input, .filtros-productos select {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 767px) {
+  .admin-header {
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+  .admin-header h1 {
+    font-size: 1.5rem;
+  }
+  .admin-header p {
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+  .admin-header .btn-logout {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+  }
+  .acciones {
     flex-direction: column;
-    justify-content: space-between;
+    margin: 1rem;
+    gap: 0;
   }
-
-  .producto-img {
+  .acciones .btn-agregar,
+  .acciones .btn-eliminar,
+  .acciones .btn-modificar {
     width: 100%;
-    height: 220px; 
-    object-fit: contain;
-    display: block;
-    margin: 1rem auto;
+    padding: 0.8rem;
+    font-size: 1rem;
   }
-  .producto-info {
-    margin: 0.5rem ;
-    padding: 0.3rem;
-    background: #ff0000;
+  .acciones button {
+    margin: 0.5rem 0;
   }
-  .producto-precio, .producto-stock, .producto-tipo, .producto-nombre, .producto-descripcion {
-    font-weight: bold;
-    color: #28a745;
+  .filtros-productos {
+    flex-direction: column;
+    margin: 1rem;
+    gap: 0.8rem;
   }
-}*/
+  .filtros-productos input, .filtros-productos select {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  .filtros-productos select {
+    flex: 1;
+  }
+}
+@media (max-width: 480px) {
+  .admin-header {
+    margin: 2rem 0.5rem;
+  }
+  .admin-header h1 {
+    font-size: 1.3rem;
+  }
+  .admin-header p {
+    font-size: 0.85rem;
+  }
+  .acciones {
+    margin: 0.8rem;
+  }
+  .acciones .btn-agregar,
+  .acciones .btn-eliminar,
+  .acciones .btn-modificar {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  .filtros-productos {
+    margin: 0.8rem;
+    gap: 0.6rem;
+  }
+  .filtros-productos input, .filtros-productos select {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+}
 .boton-volver {
-  background-color: #10b981;
-  color: white;
-  border: none;
+  background-color: rgb(25.9032258065, 36.5, 47.0967741935);
+  border: 1px solid rgba(255, 225, 56, 0.937254902);
+  color: rgba(255, 225, 56, 0.937254902);
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   cursor: pointer;
@@ -1161,10 +1233,13 @@ main {
 }
 
 .boton-volver:hover {
-  background-color: #2563eb;
+  background-color: rgb(25.9032258065, 36.5, 47.0967741935);
+  box-shadow: rgba(255, 225, 56, 0.937254902) 1px 1px 10px;
+  transform: scale(1.03);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-h1 {
+.encabezado-agregar {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: rgba(255, 225, 56, 0.937254902);
@@ -1230,6 +1305,8 @@ button[type=submit] {
 
 button[type=submit]:hover {
   background-color: #059669;
+  transform: scale(1.03);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button[type=submit]:active {
@@ -1249,8 +1326,321 @@ label {
   #form-agregar {
     padding: 1.5rem;
   }
-  h1 {
+  .encabezado-agregar {
     font-size: 1.6rem;
+  }
+}
+.boton-volver {
+  background-color: rgb(25.9032258065, 36.5, 47.0967741935);
+  border: 1px solid rgba(255, 225, 56, 0.937254902);
+  color: rgba(255, 225, 56, 0.937254902);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 30%;
+  margin: 2rem auto;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  display: flex; /*Se usa para centrar el botn en el centro de la pantalla*/
+  justify-content: center;
+  align-items: center;
+}
+
+.boton-volver:hover {
+  background-color: rgb(25.9032258065, 36.5, 47.0967741935);
+  box-shadow: rgba(255, 225, 56, 0.937254902) 1px 1px 10px;
+  transform: scale(1.03);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.encabezado-modificar {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 225, 56, 0.937254902);
+  text-align: center;
+}
+
+label[for=select-productos] {
+  font-weight: bold;
+  color: rgba(255, 225, 56, 0.937254902);
+  font-size: 1.1rem;
+  display: block;
+  margin: 1rem;
+}
+
+#select-productos {
+  width: 80%;
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  margin: 2rem auto;
+}
+
+#select-productos:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+#form-modificar {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 2rem auto;
+}
+
+#form-modificar label {
+  font-weight: bold;
+  color: #374151;
+  display: block;
+  margin: 0.8rem 0 0.4rem;
+}
+
+#form-modificar input,
+#form-modificar textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+#form-modificar input:focus,
+#form-modificar textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+#form-modificar textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+#form-modificar input[type=file] {
+  padding: 0.5rem;
+}
+
+#preview {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#preview img {
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button[type=submit] {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  width: 100%;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+button[type=submit]:hover {
+  background-color: #059669;
+}
+
+button[type=submit]:active {
+  transform: scale(0.98);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  #form-modificar {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  .encabezado-modificar {
+    font-size: 1.6rem;
+  }
+  #preview img {
+    max-width: 100%;
+  }
+}
+.boton-volver {
+  background-color: rgb(25.9032258065, 36.5, 47.0967741935);
+  border: 1px solid rgba(255, 225, 56, 0.937254902);
+  color: rgba(255, 225, 56, 0.937254902);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 30%;
+  margin: 2rem auto;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  display: flex; /*Se usa para centrar el botn en el centro de la pantalla*/
+  justify-content: center;
+  align-items: center;
+}
+
+.boton-volver:hover {
+  background-color: rgb(25.9032258065, 36.5, 47.0967741935);
+  box-shadow: rgba(255, 225, 56, 0.937254902) 1px 1px 10px;
+  transform: scale(1.03);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.encabezado-eliminar {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0;
+  color: rgba(255, 225, 56, 0.937254902);
+}
+
+#form-eliminar {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#form-eliminar label {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+#select-productos {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 2px solid #333;
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#select-productos:focus {
+  border-color: #f4a261;
+}
+
+#preview {
+  min-height: 100px;
+  padding: 1rem;
+  background: #2a2a2a;
+  border-radius: 10px;
+  color: #fff;
+}
+
+#form-eliminar button[type=submit] {
+  width: 100%;
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+#form-eliminar button[type=submit]:hover {
+  background: #d62828;
+  transform: translateY(-2px);
+}
+
+#form-eliminar button[type=submit]:active {
+  transform: translateY(0);
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .encabezado-eliminar {
+    font-size: 1.75rem;
+    margin: 1.5rem 0;
+  }
+  #form-eliminar {
+    max-width: 500px;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+  }
+  #form-eliminar label {
+    font-size: 1rem;
+  }
+  #select-productos {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  #form-eliminar button[type=submit] {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
+/* Mobile (hasta 767px) */
+@media (max-width: 767px) {
+  .encabezado-eliminar {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    padding: 0 1rem;
+  }
+  #form-eliminar {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+    margin: 1rem;
+    border-radius: 12px;
+  }
+  #form-eliminar label {
+    font-size: 0.95rem;
+  }
+  #select-productos {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  #preview {
+    min-height: 80px;
+    padding: 0.8rem;
+  }
+  #form-eliminar button[type=submit] {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+}
+/* Mobile pequeño (hasta 480px) */
+@media (max-width: 480px) {
+  .encabezado-eliminar {
+    font-size: 1.3rem;
+    margin: 0.8rem 0;
+  }
+  #form-eliminar {
+    padding: 1.2rem 0.8rem;
+    margin: 0.8rem;
+  }
+  #form-eliminar label {
+    font-size: 0.9rem;
+  }
+  #select-productos {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  #preview {
+    min-height: 60px;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+  #form-eliminar button[type=submit] {
+    padding: 0.8rem;
+    font-size: 0.95rem;
   }
 }
 

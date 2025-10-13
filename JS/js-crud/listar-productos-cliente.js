@@ -1,14 +1,14 @@
-import { supabase } from "../JS/config/supabase.js";
+import { supabase } from "../config/supabase.js";
 
 const contenedor = document.getElementById("contenedor-productos");
 const selectOrdenPrecio = document.getElementById("ordenPrecio");
 const selectFiltrarTipo = document.getElementById("filtrarTipo");
 
-let productos = [];     // almacenará todos los productos de Supabase
+let productos = [];
 let filtroTipo = "";
 let ordenPrecio = "";
 
-// 🔹 Renderiza los productos en la pantalla
+// 🔹 Renderiza los productos
 function renderizarProductos(lista) {
   contenedor.innerHTML = "";
 
@@ -22,18 +22,27 @@ function renderizarProductos(lista) {
     card.classList.add("producto-card");
 
     card.innerHTML = `
-      <img src="${p.imagen_url || "../img/placeholder.png"}" alt="${p.nombre}" class="producto-img" />
-      <div class="producto-detalles">
-        <h3 class="producto-nombre">${p.nombre}</h3>
-        <p class="producto-descripcion">${p.descripcion || "Sin descripción disponible"}</p>
-        <p class="producto-precio">$${p.precio}</p>
-      </div>
+      <a href="producto.html?id=${p.id}" class="producto-link">
+        <img src="${p.imagen_url || "../img/placeholder.png"}" alt="${p.nombre}" class="producto-img" />
+        <div class="producto-detalles">
+          <h3 class="producto-nombre">${p.nombre}</h3>
+          <p class="producto-descripcion">${p.descripcion || "Sin descripción disponible"}</p>
+          <p class="producto-precio">$${p.precio}</p>
+        </div>
+      </a>
     `;
+
+
+    // 🔸 Nuevo: redirección al hacer clic
+    card.addEventListener("click", () => {
+      window.location.href = `producto.html?id=${p.id}`;
+    });
+
     contenedor.appendChild(card);
   });
 }
 
-// 🔹 Obtiene los productos desde Supabase
+// 🔹 Trae los productos
 async function getProductos() {
   const { data, error } = await supabase.from("productos").select("*");
 
@@ -43,20 +52,18 @@ async function getProductos() {
     return;
   }
 
-  productos = data; // guardo todos los productos en memoria
-  aplicarFiltros(); // renderizo aplicando los filtros actuales
+  productos = data;
+  aplicarFiltros();
 }
 
-// 🔹 Aplica los filtros seleccionados
+// 🔹 Aplica filtros
 function aplicarFiltros() {
   let resultado = [...productos];
 
-  // FILTRO POR TIPO
   if (filtroTipo !== "") {
     resultado = resultado.filter(p => p.tipo === filtroTipo);
   }
 
-  // ORDEN POR PRECIO
   if (ordenPrecio === "menor") {
     resultado.sort((a, b) => a.precio - b.precio);
   } else if (ordenPrecio === "mayor") {
@@ -66,7 +73,7 @@ function aplicarFiltros() {
   renderizarProductos(resultado);
 }
 
-// 🔹 Eventos de los filtros
+// 🔹 Eventos
 selectOrdenPrecio.addEventListener("change", (e) => {
   ordenPrecio = e.target.value;
   aplicarFiltros();

@@ -1,40 +1,37 @@
-import { supabase } from "../JS/config/supabase.js"; // ajustar ruta según carpeta
+import { supabase } from "../JS/config/supabase.js";
 
 const contenedor = document.getElementById("detalle-producto");
 
-// 🔹 Obtener parámetro ID de la URL
+// 🔹 Obtener el parámetro id de la URL
 const params = new URLSearchParams(window.location.search);
-const idProducto = params.get("id");
+const id = params.get("id");
 
-async function cargarDetalle() {
-  if (!idProducto) {
-    contenedor.innerHTML = "<p>❌ Producto no encontrado.</p>";
+if (!id) {
+  contenedor.innerHTML = "<p>Producto no encontrado.</p>";
+} else {
+  obtenerProducto(id);
+}
+
+// 🔹 Consultar producto específico
+async function obtenerProducto(id) {
+  const { data, error } = await supabase.from("productos").select("*").eq("id", id).single();
+
+  if (error || !data) {
+    contenedor.innerHTML = "<p>Error al cargar el producto.</p>";
+    console.error(error);
     return;
   }
 
-  const { data: producto, error } = await supabase
-    .from("productos")
-    .select("*")
-    .eq("id", idProducto)
-    .single();
-
-  if (error || !producto) {
-    console.error("Error al traer producto:", error);
-    contenedor.innerHTML = "<p>⚠️ No se pudo cargar el producto.</p>";
-    return;
-  }
-
-  // Renderizar tarjeta de detalle
+  const p = data;
   contenedor.innerHTML = `
     <div class="detalle-card">
-      <img src="${producto.imagen_url}" alt="${producto.nombre}" />
-      <h2>${producto.nombre}</h2>
-      <p><strong>Precio:</strong> $${producto.precio}</p>
-      <p><strong>Stock:</strong> ${producto.stock} unidades</p>
-      <p><strong>Descripción:</strong> ${producto.descripcion}</p>
-      <p><strong>Tipo:</strong> ${producto.tipo}</p>
+      <img src="${p.imagen_url || "../img/placeholder.png"}" alt="${p.nombre}" class="detalle-img" />
+      <div class="detalle-info">
+        <h1>${p.nombre}</h1>
+        <p class="detalle-tipo">Tipo: ${p.tipo}</p>
+        <p class="detalle-descripcion">${p.descripcion || "Sin descripción disponible."}</p>
+        <p class="detalle-precio">💲 ${p.precio}</p>
+      </div>
     </div>
   `;
 }
-
-cargarDetalle();

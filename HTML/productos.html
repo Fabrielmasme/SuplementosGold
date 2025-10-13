@@ -34,7 +34,7 @@
     </nav>
   </header>
   <main>
-    <h1>Catálogo de Productos</h1>
+    <h1 class="encabezado-productos">Catálogo de Productos</h1>
 
     <section class="filtros">
       <label for="ordenPrecio">Ordenar:</label>
@@ -62,9 +62,14 @@
     </section>
 
     <!-- Acá se mostrarán los productos -->
-    <div id="contenedor-productos" class="productos-grid"></div>
+    <div id="contenedor-productos" class="productos-grid">
+      
+    </div>
 
-    <script type="module" src="../JS/js-crud/listar-productos.js"></script>
+
+  <script type="module" src="../JS/js-crud/listar-productos-cliente.js"></script>
+  <script type="module" src="../JS/ordenar-precios.js"></script>
+  <script type="module" src="../JS/detalle.js"></script>
   </main>
   <footer>
     <p>© 2025 Suplementos Gold. Todos los derechos reservados.</p>

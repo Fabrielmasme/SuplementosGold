@@ -10,11 +10,14 @@
 @use 'layout/footer';
 
 @use 'pages/index';
-@use 'pages/productos';
+@use 'pages/catalogoProductos';
 @use 'pages/nosotros';
 @use 'pages/producto';
 @use 'pages/login';
 @use 'pages/inicioAdmin';
 @use 'pages/agregar';
+@use 'pages/modificar';
+@use 'pages/eliminar';
+
 
 @use 'themes/default';

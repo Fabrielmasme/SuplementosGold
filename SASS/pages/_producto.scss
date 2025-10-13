@@ -1,26 +1,6 @@
 @import "../abstracts/variables";
 @import '../components/boton-volver';
 
-main{
-  font-family: $tipografia;
-}
-/*.boton-volver {
-  display: inline-block;
-  background-color: #25d366;
-  color: #333;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #179246;
-  }
-}*/
 #detalle-producto {
   padding: 2rem;
   background-color: $gris-fondo;

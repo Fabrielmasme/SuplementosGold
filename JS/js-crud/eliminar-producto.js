@@ -22,7 +22,7 @@ async function cargarProductos() {
   data.forEach((producto) => {
     const option = document.createElement("option");
     option.value = producto.id;
-    option.textContent = `${producto.nombre} | 💲${producto.precio} | 📦${producto.stock} unidades`;
+    option.textContent = `${producto.nombre} |💲${producto.precio}`;
     selectProductos.appendChild(option);
   });
 

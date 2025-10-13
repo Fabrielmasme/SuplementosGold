@@ -26,7 +26,6 @@ function renderProductos(productos) {
       </div>
       <p class="producto-descripcion">${p.descripcion || "Sin descripción"}</p>
       <p class="producto-precio">💲 ${p.precio}</p>
-      <p class="producto-stock">Stock: ${p.stock}</p>
     </div>
 `;
 

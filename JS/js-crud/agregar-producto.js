@@ -10,7 +10,7 @@ form.addEventListener("submit", async (e) => {
   const nombre = document.getElementById("nombre").value;
   const descripcion = document.getElementById("descripcion").value;
   const precio = parseFloat(document.getElementById("precio").value);
-  const stock = parseInt(document.getElementById("stock").value);
+  /*const stock = parseInt(document.getElementById("stock").value);*/
   const tipo = document.getElementById("tipo").value;
   const imagen = document.getElementById("imagen").files[0];
 
@@ -43,7 +43,7 @@ form.addEventListener("submit", async (e) => {
         nombre,
         descripcion,
         precio,
-        stock,
+        /*stock,*/
         tipo,
         imagen_url: imagenUrl,
       },
