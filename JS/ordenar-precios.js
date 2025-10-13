@@ -17,21 +17,25 @@ function renderizarProductos(lista) {
     return;
   }
 
-  lista.forEach((p) => {
-    const card = document.createElement("div");
-    card.classList.add("producto-card");
+  lista.forEach((producto) => {
+    const div = document.createElement("div");
+    div.classList.add("producto-card");
 
-    card.innerHTML = `
-      <img src="${p.imagen_url || "../img/placeholder.png"}" alt="${p.nombre}" class="producto-img" />
-      <div class="producto-detalles">
-        <h3 class="producto-nombre">${p.nombre}</h3>
-        <p class="producto-descripcion">${p.descripcion || "Sin descripción disponible"}</p>
-        <p class="producto-precio">$${p.precio}</p>
-      </div>
+    div.innerHTML = `
+      <a href="../HTML/producto.html?id=${producto.id}" class="producto-link">
+        <img src="${producto.imagen_url || "../img/placeholder.png"}" alt="${producto.nombre}" class="producto-img" />
+        <div class="producto-detalles">
+          <h3 class="producto-nombre">${producto.nombre}</h3>
+          <p class="producto-descripcion">${producto.descripcion || "Sin descripción disponible"}</p>
+          <p class="producto-precio">$${producto.precio}</p>
+        </div>
+      </a>
     `;
-    contenedor.appendChild(card);
+
+    contenedor.appendChild(div);
   });
 }
+
 
 // 🔹 Obtiene los productos desde Supabase
 async function getProductos() {
