@@ -50,9 +50,9 @@
   overflow: hidden;
 }
 
-.producto-img {
-  max-height: 100%;
-  max-width: 100%;
+.producto-card .producto-img {
+  width: 10rem;
+  height: auto;
   object-fit: contain;
   display: block;
 }
