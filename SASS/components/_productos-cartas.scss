@@ -49,7 +49,10 @@
   border-radius: 8px;
   overflow: hidden;
 }
-
+.producto-img-container img{
+  height: 250px;
+  object-fit: cover;
+}
 .producto-card .producto-img {
   width: 10rem;
   height: auto;

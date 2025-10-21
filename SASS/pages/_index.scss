@@ -8,6 +8,7 @@ main {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     height: auto;
+    margin: 0 7%;
     img {
       flex: 0 0 100%;
       scroll-snap-align: center;
@@ -45,7 +46,6 @@ main {
           height: 40rem;
           display: block;
           border-radius: 1rem;
-
         }
       }
     }
@@ -249,7 +249,7 @@ main {
 }
 
 // Media queries para responsividad
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   main {
     .texto-presentacion {
       padding: 2rem 1rem;
@@ -267,61 +267,6 @@ main {
       }
     }
     
-    .carrusel {
-      &-contenedor {
-        padding: 0 0.5rem;
-      }
-      
-      &-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-        
-        &.anterior {
-          margin-right: 0.5rem;
-        }
-        
-        &.despues {
-          margin-left: 0.5rem;
-        }
-      }
-      
-      &-item img {
-        height: 200px;
-      }
-    }
-    
-    .caracteristicas {
-      grid-template-columns: 1fr;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-      
-      article {
-        padding: 1.5rem;
-      }
-    }
-    
-    .productos {
-      grid-template-columns: 1fr;
-      padding: 2rem 1rem;
-      
-      &-items {
-        .info {
-          padding: 1rem;
-        }
-      }
-      
-      button {
-        padding: 0.8rem 2rem;
-        margin-top: 1rem;
-        
-        a {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
-}
 
 @media (max-width: 480px) {
   main {
@@ -343,4 +288,84 @@ main {
       }
     }
   }
+}
+  @media (max-width: 600px) {
+    .carrusel {
+      height: auto;
+
+      .carrusel-contenedor {
+        border-radius: 0;
+      }
+      .carrusel-item {
+        min-width: 100%;
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+          border-radius: 0.5rem;
+        }
+      }
+
+      .carrusel-btn {
+        font-size: 1.5rem;
+        padding: 0.4rem 0.8rem;
+        top: 50%;
+        background-color: rgba(0, 0, 0, 0.3);
+
+        &.anterior {
+          left: 0.2rem;
+        }
+
+        &.despues {
+          right: 0.2rem;
+        }
+      }
+      .carrusel-lista{
+        height: 15rem;
+      }
+    }
+    .texto-presentacion {
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+        margin: 4rem 0;
+      }
+    }
+    .caracteristicas {
+      flex-direction: column;
+      align-items: center;
+      margin: 5rem 0;
+      article {
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+      p{
+        text-align: center;
+        font-size: 3rem;
+      }
+    }
+    .productos {
+      margin: 4rem 0;
+      .productos-items {
+        width: 90%;
+        margin: 2rem auto;
+        height: auto;
+      }
+      .productos-items img {
+        width: 15rem;
+        height: 18rem;
+      }
+      button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+        margin: 4rem 2rem;
+      }
+    }
+  }
+}
 }

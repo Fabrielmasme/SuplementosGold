@@ -210,13 +210,19 @@
 // Mobile pequeño (hasta 480px)
 @media (max-width: 480px) {
   .admin-header {
-    margin: 2rem  0.5rem;
+    height: 6rem;
     h1 {
       font-size: 1.3rem;
+      margin: 1rem 0;
     }
 
     p {
       font-size: 0.85rem;
+    }
+    #logoutBtn {
+      padding: 0.4rem 0.7rem;
+      font-size: 0.85rem;
+      margin: 0 0 1rem 0;
     }
   }
 
