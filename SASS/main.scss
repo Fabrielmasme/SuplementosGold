@@ -5,12 +5,15 @@
 
 @use 'components/productos-cartas';
 @use 'components/filtros-productos';
+@use 'components/catalogoProductos';
+@use 'components/catalogoProductosAdmin';
+@use 'components/productos-destacados';
+
 
 @use 'layout/header';
 @use 'layout/footer';
 
 @use 'pages/index';
-@use 'pages/catalogoProductos';
 @use 'pages/nosotros';
 @use 'pages/producto';
 @use 'pages/login';

@@ -9,6 +9,7 @@ let filtroTipo = "";
 let ordenPrecio = "";
 
 // 🔹 Renderiza los productos
+
 function renderizarProductos(lista) {
   contenedor.innerHTML = "";
 
@@ -19,19 +20,19 @@ function renderizarProductos(lista) {
 
   lista.forEach((p) => {
     const card = document.createElement("div");
-    card.classList.add("producto-card");
+    card.classList.add("card-producto");
 
     card.innerHTML = `
-      <a href="producto.html?id=${p.id}" class="producto-link">
-        <img src="${p.imagen_url || "../img/placeholder.png"}" alt="${p.nombre}" class="producto-img" />
-        <div class="producto-detalles">
-          <h3 class="producto-nombre">${p.nombre}</h3>
-          <p class="producto-descripcion">${p.descripcion || "Sin descripción disponible"}</p>
-          <p class="producto-precio">$${p.precio}</p>
+      <div class="producto-info">
+        <h3 class="producto-nombre">${p.nombre}</h3>
+        <p class="producto-tipo">${p.tipo}</p>
+        <div class="producto-img-container">
+          <img src="${p.imagen_url || "../img/placeholder.png"}" alt="${p.nombre}" class="producto-img" />
         </div>
-      </a>
+        <p class="producto-descripcion">${p.descripcion || "Sin descripción"}</p>
+        <p class="producto-precio"> $ ${p.precio}</p>
+      </div>
     `;
-
 
     // 🔸 Nuevo: redirección al hacer clic
     card.addEventListener("click", () => {

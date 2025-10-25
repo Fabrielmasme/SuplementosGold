@@ -1,20 +1,33 @@
 import { supabase } from "../JS/config/supabase.js";
 
-const contenedor = document.getElementById("detalle-producto");
+// Esperar a que el DOM esté completamente cargado
+document.addEventListener("DOMContentLoaded", () => {
+  const contenedor = document.getElementById("detalle-producto");
 
-// 🔹 Obtener el parámetro id de la URL
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+  // VALIDAR que el contenedor exista
+  if (!contenedor) {
+    console.error("❌ ERROR: No existe el elemento #detalle-producto en el HTML");
+    return;
+  }
 
-if (!id) {
-  contenedor.innerHTML = "<p>Producto no encontrado.</p>";
-} else {
-  obtenerProducto(id);
-}
+  // 🔹 Obtener el parámetro id de la URL
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
 
-// 🔹 Consultar producto específico
-async function obtenerProducto(id) {
-  const { data, error } = await supabase.from("productos").select("*").eq("id", id).single();
+  if (!id) {
+    contenedor.innerHTML = "<p>Producto no encontrado.</p>";
+  } else {
+    obtenerProducto(id, contenedor);
+  }
+});
+
+// Consultar producto específico
+async function obtenerProducto(id, contenedor) {
+  const { data, error } = await supabase
+    .from("productos")
+    .select("*")
+    .eq("id", id)
+    .single();
 
   if (error || !data) {
     contenedor.innerHTML = "<p>Error al cargar el producto.</p>";

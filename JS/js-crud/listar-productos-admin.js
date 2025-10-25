@@ -18,18 +18,17 @@ function renderProductos(productos) {
     card.classList.add("card-producto");
 
     card.innerHTML = `
-    <div class="producto-info">
-      <h3 class="producto-nombre">${p.nombre}</h3>
-      <p class="producto-tipo">Tipo: ${p.tipo}</p>
-      <div class="producto-img-container">
-        <img src="${p.imagen_url || "../img/placeholder.png"}" alt="${p.nombre}" class="producto-img" />
+      <div class="producto-info">
+        <h3 class="producto-nombre">${p.nombre}</h3>
+        <p class="producto-tipo">${p.tipo}</p>
+        <div class="producto-img-container">
+          <img src="${p.imagen_url || "../img/placeholder.png"}" alt="${p.nombre}" class="producto-img" />
+        </div>
+        <p class="producto-descripcion">${p.descripcion || "Sin descripción"}</p>
+        <p class="producto-precio">$ ${p.precio}</p>
       </div>
-      <p class="producto-descripcion">${p.descripcion || "Sin descripción"}</p>
-      <p class="producto-precio">💲 ${p.precio}</p>
-    </div>
-`;
-
-  contenedor.appendChild(card);
+    `;
+    contenedor.appendChild(card);
   });
 }
 
