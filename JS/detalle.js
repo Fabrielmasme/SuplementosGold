@@ -41,9 +41,13 @@ async function obtenerProducto(id, contenedor) {
       <img src="${p.imagen_url || "../img/placeholder.png"}" alt="${p.nombre}" class="detalle-img" />
       <div class="detalle-info">
         <h1>${p.nombre}</h1>
-        <p class="detalle-tipo">Tipo: ${p.tipo}</p>
+        <p class="detalle-tipo">${p.tipo}</p>
         <p class="detalle-descripcion">${p.descripcion || "Sin descripción disponible."}</p>
-        <p class="detalle-precio">💲 ${p.precio}</p>
+        <p class="detalle-precio">$ ${p.precio}</p>
+
+        <a href="https://wa.me/5492224529603?text=Hola! Estoy interesado en el producto Creatina%20300g%20Pote%20Star%20Nutrition" target="_blank" class="boton-wpp">
+         Consultar por WhatsApp
+        </a>
       </div>
     </div>
   `;
