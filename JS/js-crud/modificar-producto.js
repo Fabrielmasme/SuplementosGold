@@ -7,7 +7,7 @@ const formModificar = document.getElementById("form-modificar");
 const nombreInput = document.getElementById("nombre");
 const descripcionInput = document.getElementById("descripcion");
 const precioInput = document.getElementById("precio");
-const stockInput = document.getElementById("stock");
+/*const stockInput = document.getElementById("stock");*/
 const tipoInput = document.getElementById("tipo");
 const imagenInput = document.getElementById("imagen");
 const preview = document.getElementById("preview");
@@ -58,7 +58,7 @@ selectProductos.addEventListener("change", async () => {
   nombreInput.value = producto.nombre;
   descripcionInput.value = producto.descripcion;
   precioInput.value = producto.precio;
-  stockInput.value = producto.stock;
+/*  stockInput.value = producto.stock;*/
   tipoInput.value = producto.tipo;
 
   // Preview de imagen
@@ -108,7 +108,7 @@ formModificar.addEventListener("submit", async (e) => {
         nombre: nombreInput.value,
         descripcion: descripcionInput.value,
         precio: parseFloat(precioInput.value),
-        stock: parseInt(stockInput.value),
+/*      stock: parseInt(stockInput.value),*/
         tipo: tipoInput.value,
         ...(imagen_url && { imagen_url }), // solo actualizar imagen si se subió
       })
